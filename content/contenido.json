@@ -1,0 +1,938 @@
+{
+ "meta": {
+  "obra": "La rebelión de las masas",
+  "autor": "José Ortega y Gasset",
+  "version_contenido": "v3-0.1",
+  "fecha": "2026-10-15",
+  "fuente_trabajo": "PDF suministrado, 87 pp. (paginación PDF, no edición impresa)",
+  "estado_citas": "cotejadas contra el PDF de trabajo; pendientes de cotejo con edición de referencia",
+  "politica": "Paráfrasis propias + citas breves con localizador. Sin texto íntegro (protección en España hasta 31-12-2035)."
+ },
+ "libro_minuto": [
+  "Hacia 1930, Europa vive una conquista sin precedentes: millones de personas acceden a una vida que antes era privilegio de unos pocos.",
+  "Ortega celebra ese ascenso, pero detecta un riesgo: disfrutar lo recibido como si fuera naturaleza, sin preguntarse qué lo sostiene.",
+  "Llama hombre-masa a quien no se exige nada y opina sin dar razones. No es una clase social: puede ser obrero, burgués o científico.",
+  "La técnica, la ciencia, la ley y el Estado no funcionan solos. Si se olvida su esfuerzo de origen, pueden degradarse o volverse contra la sociedad.",
+  "Su propuesta: exigencia personal, convivir con quien discrepa y un proyecto común para Europa que no borre las diferencias."
+ ],
+ "lectura_critica": "Ortega escribe desde una posición elitista en algunos pasajes, con prejuicios de su época sobre otros pueblos y sobre las mujeres. Esta bóveda los señala en cada estación: entender a un autor no obliga a darle siempre la razón.",
+ "tensiones": [
+  {
+   "id": "posibilidades",
+   "corto": "Posibilidades",
+   "titulo": "Más mundo, ¿más criterio?",
+   "figura": "armilar",
+   "acento": "#7fb6ff",
+   "caps": [
+    "I",
+    "II",
+    "III",
+    "IV",
+    "V"
+   ],
+   "cap_label": "Cap. I–V",
+   "fuente": "I–V · PDF pp. 11–24",
+   "ortega_idea": "Nunca tuvimos tantas posibilidades. Es una conquista real, pero no trae incluido el criterio para elegir.",
+   "ortega_tesis": "Ortega reconoce el ascenso del nivel de vida y la ampliación de sus posibilidades. También sostiene que esa abundancia no trae una orientación garantizada.",
+   "ortega_largo": "Nunca la vida media tuvo tanto repertorio. Esa amplitud es un logro real, pero obliga a elegir y no trae consigo el criterio para hacerlo.",
+   "citas": [
+    {
+     "texto": "Masa es todo aquel que no se valora a sí mismo",
+     "pdf": 13,
+     "cap": "I"
+    },
+    {
+     "texto": "Vivir es sentirse fatalmente forzado a ejercitar la libertad",
+     "pdf": 22,
+     "cap": "IV"
+    }
+   ],
+   "pregunta": "Una ciudad abre sus recursos a muchas más personas. ¿Dónde pondrías primero tu atención?",
+   "lecturas": [
+    {
+     "etiqueta": "En ampliar el acceso",
+     "corto": "Acceso",
+     "pieza": "M02",
+     "lectura": "La ampliación del repertorio vital es una conquista que debe poder disfrutarse. La posibilidad de aprender depende también de que existan recursos, tiempo y acceso.",
+     "deja_fuera": "Esta lectura deja en segundo plano cómo se forman los criterios de elección. Acceder a más no garantiza poder orientarse mejor.",
+     "objecion": "No basta con celebrar la apertura si las posibilidades se vuelven inabarcables o si el acceso efectivo sigue siendo desigual."
+    },
+    {
+     "etiqueta": "En aprender a orientarnos",
+     "corto": "Criterio",
+     "pieza": "M11",
+     "lectura": "La abundancia hace más urgente decidir qué merece la pena. El problema no se resuelve acumulando opciones, sino elaborando fines y respondiendo por ellos.",
+     "deja_fuera": "Esta lectura puede deslizarse hacia el paternalismo: alguien podría decidir qué opciones merecen los demás.",
+     "objecion": "La exigencia de criterio también necesita condiciones materiales; no puede convertirse en una excusa para restringir el acceso."
+    }
+   ],
+   "fisura": "La misma ampliación puede ser conquista y desorientación. Reconocer una no permite borrar la otra.",
+   "aplanado": "Más posibilidades significan vivir mejor. Sólo hace falta avanzar.",
+   "hoy": "La abundancia de opciones —información, viajes, herramientas— plantea hoy la misma pregunta: ¿quién nos enseña a orientarnos?",
+   "contrapunto": "El ascenso del nivel de vida, los derechos y el bienestar de las mayorías son conquistas que no deben leerse como síntomas de decadencia.",
+   "herramienta": "Entre todo lo que puedo hacer, ¿qué quiero hacer de verdad, y por qué?",
+   "ejemplo": "Ante la oferta infinita de pantallas, cursos o viajes, elegir es la tarea, no un detalle."
+  },
+  {
+   "id": "herencia",
+   "corto": "Herencia",
+   "titulo": "Lo recibido, ¿deuda o derecho?",
+   "figura": "zigurat",
+   "acento": "#ffc46b",
+   "caps": [
+    "VI",
+    "VII",
+    "XI"
+   ],
+   "cap_label": "Cap. VI, VII, XI",
+   "fuente": "VI–VII, XI · PDF pp. 24–28, 35–38",
+   "ortega_idea": "Disfrutamos lo heredado como si fuera naturaleza y olvidamos que otros lo construyeron.",
+   "ortega_tesis": "Ortega contrapone la satisfacción con lo recibido y una vida que se impone exigencias. Su vocabulario de nobleza e ingratitud necesita discusión.",
+   "ortega_largo": "El hombre-masa combina deseos ilimitados con ingratitud hacia lo que los satisface. La nobleza, en cambio, es exigencia: obligarse a sí mismo.",
+   "citas": [
+    {
+     "texto": "la radical ingratitud hacia cuanto ha hecho posible la facilidad de su existencia",
+     "pdf": 25,
+     "cap": "VI"
+    },
+    {
+     "texto": "La nobleza se define por la exigencia, por las obligaciones, no por los derechos.",
+     "pdf": 26,
+     "cap": "VII"
+    }
+   ],
+   "pregunta": "Un servicio que utilizas depende de generaciones de trabajo. ¿Cómo formularías tu relación con él?",
+   "lecturas": [
+    {
+     "etiqueta": "Tengo una obligación de sostenerlo",
+     "corto": "Obligación",
+     "pieza": "M11",
+     "lectura": "Usar un bien común invita a reconocer sus condiciones y a participar en su continuidad. Recibir algo puede abrir una responsabilidad.",
+     "deja_fuera": "El deber corre el riesgo de convertirse en una deuda moral que exija gratitud incluso ante instituciones injustas.",
+     "objecion": "No toda persona dispone de los mismos medios para contribuir. La exigencia no debe borrar esa desigualdad."
+    },
+    {
+     "etiqueta": "Puedo exigirlo y transformarlo",
+     "corto": "Derecho",
+     "pieza": "M01",
+     "lectura": "Lo heredado no es un favor personal de sus fundadores. Quienes lo reciben pueden reclamar acceso, impugnar sus exclusiones y cambiarlo.",
+     "deja_fuera": "Esta lectura puede oscurecer el trabajo de mantenimiento y tratar como automática una continuidad que alguien debe sostener.",
+     "objecion": "Poder transformar una herencia exige conocer qué permite conservarla y qué consecuencias puede tener su pérdida."
+    }
+   ],
+   "fisura": "La responsabilidad no cancela los derechos; los derechos no hacen desaparecer el cuidado de sus condiciones.",
+   "aplanado": "Debemos agradecer lo que tenemos y seguir las reglas.",
+   "hoy": "Cualquiera puede vivir como heredero satisfecho de servicios que funcionan solos. La pregunta no es quién eres, sino qué haces con lo recibido.",
+   "contrapunto": "Esta sala nunca te clasificará. La distinción de Ortega es moral, no social, y él mismo la aplica de forma desigual a distintos grupos.",
+   "herramienta": "¿Qué uso hoy que otros construyeron, y qué hago yo para sostenerlo?",
+   "ejemplo": "El agua potable, una vacuna, una biblioteca pública: detrás de cada una hay generaciones de esfuerzo."
+  },
+  {
+   "id": "conocimiento",
+   "corto": "Conocimiento",
+   "titulo": "¿Quién entiende la máquina?",
+   "figura": "engranajes",
+   "acento": "#5fe3c9",
+   "caps": [
+    "IX",
+    "X",
+    "XII"
+   ],
+   "cap_label": "Cap. IX, X, XII",
+   "fuente": "IX–X, XII · PDF pp. 30–35, 38–40",
+   "ortega_idea": "La civilización no funciona sola: técnica, ciencia y memoria necesitan a alguien que las cuide.",
+   "ortega_tesis": "Ortega liga técnica, ciencia y cultura, y advierte sobre la autoridad que el especialista se atribuye fuera de su campo.",
+   "ortega_largo": "La civilización no está ahí: se sostiene. La técnica depende de la ciencia, la ciencia del amor a la verdad, y todo ello de la memoria histórica. El especialista que pierde la visión del conjunto se vuelve sabio-ignorante.",
+   "citas": [
+    {
+     "texto": "La civilización no está ahí, no se sostiene a sí misma.",
+     "pdf": 33,
+     "cap": "IX"
+    },
+    {
+     "texto": "es un sabio-ignorante, cosa sobremanera grave",
+     "pdf": 40,
+     "cap": "XII"
+    }
+   ],
+   "pregunta": "Una infraestructura es demasiado compleja para que una sola persona la comprenda. ¿Qué reforzarías?",
+   "lecturas": [
+    {
+     "etiqueta": "La autonomía de quienes investigan",
+     "corto": "Especialización",
+     "pieza": "M03",
+     "lectura": "La investigación necesita tiempo, método y saberes específicos. Su valor no puede depender sólo de la utilidad inmediata o de una aprobación pública constante.",
+     "deja_fuera": "La autonomía puede volverse opacidad: quienes sostienen la infraestructura podrían quedar sin medios para interrogar sus decisiones.",
+     "objecion": "La competencia técnica no da por sí sola autoridad sobre los fines colectivos o la distribución de los costes."
+    },
+    {
+     "etiqueta": "La traducción entre saberes y públicos",
+     "corto": "Conexión",
+     "pieza": "M02",
+     "lectura": "No hace falta que todos lo sepan todo, pero sí que existan traducción, crítica y cooperación entre quienes conocen partes distintas.",
+     "deja_fuera": "La demanda de comprensión común puede simplificar en exceso o hacer que la investigación responda sólo a lo que ya resulta familiar.",
+     "objecion": "Explicar un saber no elimina su dificultad ni vuelve intercambiables las competencias. La cooperación también necesita especialización."
+    }
+   ],
+   "fisura": "Una máquina eficaz puede ser opaca. Hacerla comprensible no significa que una persona deba saberlo todo.",
+   "aplanado": "La tecnología resuelve los problemas si la usamos bien.",
+   "hoy": "Usamos sistemas que nadie entiende por completo. La pregunta es quién cuida las condiciones que los hacen posibles.",
+   "contrapunto": "La especialización también produce excelencia y cooperación real. La ciencia actual avanza precisamente por redes de especialistas que se corrigen entre sí.",
+   "herramienta": "¿Sé dónde termina lo que sé, y escucho a quien sabe de lo demás?",
+   "ejemplo": "Un gran ingeniero opinando de historia, o una celebridad dando consejos médicos: precisión local, autoridad prestada."
+  },
+  {
+   "id": "desacuerdo",
+   "corto": "Desacuerdo",
+   "titulo": "¿Razones comunes o reglas revisables?",
+   "figura": "tribunas",
+   "acento": "#ff8a6b",
+   "caps": [
+    "prologo",
+    "VIII"
+   ],
+   "cap_label": "Prólogo · Cap. VIII",
+   "fuente": "Prólogo · PDF pp. 1–2; VIII · pp. 28–30",
+   "ortega_idea": "Tener una idea es aceptar que existen razones. Quien solo impone opiniones acaba en la acción directa.",
+   "ortega_tesis": "El ensayo critica la opinión que rehúye las razones y defiende la convivencia con el adversario. En VIII también convierte parte del desacuerdo con el autor en confirmación de su diagnóstico.",
+   "ortega_largo": "Tener una idea es aceptar que existen razones a las que someterse. Quien renuncia a ellas acaba imponiéndose por la acción directa. El liberalismo es la generosidad de convivir con el que piensa distinto.",
+   "citas": [
+    {
+     "texto": "Tener una idea es creer que se poseen las razones de ella",
+     "pdf": 29,
+     "cap": "VIII"
+    },
+    {
+     "texto": "El liberalismo -conviene hoy recordar esto- es la suprema generosidad",
+     "pdf": 30,
+     "cap": "VIII"
+    }
+   ],
+   "pregunta": "Dos grupos discrepan sobre las reglas de una discusión. ¿Desde dónde empezarías?",
+   "lecturas": [
+    {
+     "etiqueta": "Desde unas reglas que obliguen a todos",
+     "corto": "Mediación",
+     "pieza": "M07",
+     "lectura": "Pedir razones requiere procedimientos que también limiten a quien cree tener razón. Las mediaciones contienen el riesgo de imponer una posición por la fuerza.",
+     "deja_fuera": "Las reglas existentes pueden favorecer a algunas voces y presentarse como neutrales mientras excluyen otras.",
+     "objecion": "¿Quién redactó esas reglas y qué posibilidad existe de impugnarlas sin quedar fuera de la discusión?"
+    },
+    {
+     "etiqueta": "Desde el derecho a cuestionar las reglas",
+     "corto": "Disenso",
+     "pieza": "M08",
+     "lectura": "La pluralidad incluye discutir cómo se decide y quién puede hablar. Un procedimiento justo necesita admitir objeciones a su propio diseño.",
+     "deja_fuera": "Si toda regla puede quedar suspendida de inmediato, las voces con más poder pueden imponer su voluntad durante el vacío.",
+     "objecion": "¿Qué mediación provisional permitiría discutir las reglas sin dejar indefensas a las personas afectadas?"
+    }
+   ],
+   "fisura": "El desacuerdo no prueba ignorancia. La petición de razones también debe dirigirse a quien establece las reglas.",
+   "aplanado": "Todos debemos dialogar y ponernos de acuerdo.",
+   "hoy": "Debatir en público hoy suele premiar la contundencia sobre las razones. Ortega pide lo contrario: someter la propia opinión a examen.",
+   "contrapunto": "La ley y la mediación también pueden ser injustas. Y Ortega, crítico de la acción directa, no siempre fue ecuánime al juzgar a sus adversarios.",
+   "herramienta": "¿Qué argumento me haría cambiar de opinión?",
+   "ejemplo": "Si la respuesta honesta es «ninguno», no tengo una idea: tengo una trinchera."
+  },
+  {
+   "id": "poder",
+   "corto": "Poder",
+   "titulo": "¿Qué sostiene el poder común?",
+   "figura": "atrio",
+   "acento": "#ff6f61",
+   "caps": [
+    "XIII"
+   ],
+   "cap_label": "Cap. XIII",
+   "fuente": "XIII · PDF pp. 40–43",
+   "ortega_idea": "El Estado es una creación admirable, pero si lo absorbe todo, la sociedad deja de crear.",
+   "ortega_tesis": "Ortega reconoce la potencia del Estado moderno y advierte que puede absorber la iniciativa social de la que se alimenta.",
+   "ortega_largo": "El Estado moderno es una creación extraordinaria, pero tiende a absorber la iniciativa social. Cuando la sociedad vive para el Estado, se burocratiza, se militariza y se agota.",
+   "citas": [
+    {
+     "texto": "El Estado contemporáneo es el producto más visible y notorio de la civilización.",
+     "pdf": 42,
+     "cap": "XIII"
+    },
+    {
+     "texto": "La sociedad tendrá que vivir para el Estado; el hombre, para la maquina del gobierno.",
+     "pdf": 42,
+     "cap": "XIII"
+    }
+   ],
+   "pregunta": "Ante un problema compartido, ¿qué riesgo considerarías primero?",
+   "lecturas": [
+    {
+     "etiqueta": "La falta de capacidad colectiva",
+     "corto": "Coordinación",
+     "pieza": "M10",
+     "lectura": "Algunos derechos y servicios dependen de instituciones capaces de coordinar recursos. La capacidad común puede ampliar las posibilidades de quienes tienen menos.",
+     "deja_fuera": "Esa coordinación puede concentrar decisiones, convertir una excepción en regla o reducir la iniciativa de los afectados.",
+     "objecion": "¿Qué controles, participación y posibilidades de réplica acompañan a la ampliación del aparato?"
+    },
+    {
+     "etiqueta": "La concentración de la decisión",
+     "corto": "Límites",
+     "pieza": "M08",
+     "lectura": "La iniciativa social necesita márgenes para organizarse, impugnar decisiones y producir alternativas. La potencia de una institución exige límites.",
+     "deja_fuera": "Reducir la institución no distribuye automáticamente el poder: puede trasladarlo a actores privados con menos controles.",
+     "objecion": "¿Qué garantías y capacidades desaparecerían junto con el poder que quieres limitar?"
+    }
+   ],
+   "fisura": "Más capacidad no equivale a más libertad. Menos Estado tampoco garantiza por sí mismo menos dominación.",
+   "aplanado": "Hace falta una autoridad eficaz que resuelva los problemas.",
+   "hoy": "Ante cada crisis surge la tentación de pedirlo todo al aparato central. Ortega nos obliga a preguntar qué perdemos a cambio.",
+   "contrapunto": "El Estado también protege libertades, garantiza derechos y redistribuye. Reducirlo no garantiza por sí mismo más pluralidad.",
+   "herramienta": "Ante este problema, ¿qué debe hacer el Estado, qué la sociedad y qué yo?",
+   "ejemplo": "La pregunta evita a la vez el «que lo arregle el gobierno» y el «sálvese quien pueda»."
+  },
+  {
+   "id": "proyecto",
+   "corto": "Proyecto",
+   "titulo": "¿Qué futuro cabe entre distintos?",
+   "figura": "mosaico",
+   "acento": "#c79bff",
+   "caps": [
+    "XIV",
+    "epilogo",
+    "pacifismo",
+    "XV",
+    "apendice"
+   ],
+   "cap_label": "Cap. XIV–XV · Epílogo",
+   "fuente": "XIV–XV · PDF pp. 44–64; textos posteriores, pp. 65–87",
+   "ortega_idea": "Una comunidad no se sostiene por la sangre ni por la fuerza, sino por un proyecto común que todavía hay que hacer.",
+   "ortega_tesis": "El ensayo propone pensar la nación y Europa como una empresa compartida y desemboca en la obligación moral. Sus exclusiones históricas y su centralidad europea deben discutirse.",
+   "ortega_largo": "Mandar es apoyarse en la opinión, no en la fuerza. La nación no nace: se hace como proyecto de futuro. Europa ya es una sociedad y necesita un programa común. La paz no se desea: se inventa como derecho.",
+   "citas": [
+    {
+     "texto": "La vida humana, por su naturaleza propia, tiene que estar puesta a algo",
+     "pdf": 49,
+     "cap": "XIV"
+    },
+    {
+     "texto": "la nación no nace, sino que se hace",
+     "pdf": 65,
+     "cap": "epilogo"
+    }
+   ],
+   "pregunta": "Para construir un futuro común, ¿qué condición pondrías primero?",
+   "lecturas": [
+    {
+     "etiqueta": "Un compromiso capaz de orientarnos",
+     "corto": "Proyecto",
+     "pieza": "M11",
+     "lectura": "Cooperar a largo plazo exige algo más que coexistir: una empresa que merezca esfuerzo y pueda ser sostenida entre personas diferentes.",
+     "deja_fuera": "Un proyecto puede exigir tanta adhesión que convierta el desacuerdo o las pertenencias múltiples en sospechas.",
+     "objecion": "¿Quién puede negarse o cambiar ese proyecto sin perder su lugar en la comunidad?"
+    },
+    {
+     "etiqueta": "La posibilidad de revisar el compromiso",
+     "corto": "Apertura",
+     "pieza": "M06",
+     "lectura": "Un mundo común no necesita identidad única ni un programa intocable. La pertenencia puede sostenerse mediante acuerdos revisables y escucha situada.",
+     "deja_fuera": "La revisión permanente puede debilitar compromisos largos y dejar la coordinación a quienes ya concentran recursos.",
+     "objecion": "¿Qué obligaciones provisionales aceptarías mientras las metas comunes permanecen abiertas?"
+    }
+   ],
+   "fisura": "No hay una única obligación deducible del libro. Un proyecto compartido debe poder explicar a quién incluye y a quién deja fuera.",
+   "aplanado": "Unidos podemos construir el futuro que queremos.",
+   "hoy": "La Unión Europea no es exactamente lo que Ortega imaginó, pero su intuición —unidad sin uniformidad— sigue siendo la pregunta abierta del continente.",
+   "contrapunto": "La Europa que Ortega celebra fue también imperial y colonial. Algunas frases del texto sobre otros pueblos son hoy inaceptables y deben leerse como tales.",
+   "herramienta": "¿Qué futuro compartido me une a quienes son distintos a mí?",
+   "ejemplo": "Sirve igual para un barrio, una ciudad o la Unión Europea."
+  }
+ ],
+ "piezas": [
+  {
+   "id": "M01",
+   "nombre": "Anillo de continuidad",
+   "concepto": "Memoria histórica",
+   "caps": [
+    "X",
+    "prologo"
+   ],
+   "cita": {
+    "texto": "El pasado tiene razón, la suya.",
+    "pdf": 35
+   }
+  },
+  {
+   "id": "M02",
+   "nombre": "Puente de transmisión",
+   "concepto": "Educación y formación",
+   "caps": [
+    "IX",
+    "X"
+   ],
+   "cita": {
+    "texto": "El saber histórico es una técnica de primer orden para conservar y continuar una civilización",
+    "pdf": 34
+   }
+  },
+  {
+   "id": "M03",
+   "nombre": "Regulador de método",
+   "concepto": "Ciencia y verificación",
+   "caps": [
+    "IX"
+   ],
+   "cita": {
+    "texto": "La técnica es, consustancialmente, ciencia",
+    "pdf": 32
+   }
+  },
+  {
+   "id": "M04",
+   "nombre": "Tren de precisión",
+   "concepto": "Especialización",
+   "caps": [
+    "XII"
+   ],
+   "cita": {
+    "texto": "la especialización amenaza con ahogar a la ciencia",
+    "pdf": 41
+   }
+  },
+  {
+   "id": "M05",
+   "nombre": "Ventana del especialista",
+   "concepto": "Límites del saber",
+   "caps": [
+    "XII"
+   ],
+   "cita": {
+    "texto": "es un sabio-ignorante, cosa sobremanera grave",
+    "pdf": 40
+   }
+  },
+  {
+   "id": "M06",
+   "nombre": "Discos de lenguaje",
+   "concepto": "Diálogo situado",
+   "caps": [
+    "prologo",
+    "VIII"
+   ],
+   "cita": {
+    "texto": "todo auténtico decir no sólo dice algo, sino que lo dice alguien a alguien",
+    "pdf": 1
+   }
+  },
+  {
+   "id": "M07",
+   "nombre": "Rueda de reglas comunes",
+   "concepto": "Derecho y mediación",
+   "caps": [
+    "VIII",
+    "pacifismo"
+   ],
+   "cita": {
+    "texto": "La paz, por ejemplo, es el derecho como forma de trato entre los pueblos.",
+    "pdf": 68
+   }
+  },
+  {
+   "id": "M08",
+   "nombre": "Limitador de amplitud",
+   "concepto": "Pluralismo y liberalismo",
+   "caps": [
+    "VIII"
+   ],
+   "cita": {
+    "texto": "El liberalismo -conviene hoy recordar esto- es la suprema generosidad",
+    "pdf": 30
+   }
+  },
+  {
+   "id": "M09",
+   "nombre": "Colectores periféricos",
+   "concepto": "Iniciativa social",
+   "caps": [
+    "XIII"
+   ],
+   "cita": {
+    "texto": "ninguna nueva simiente podrá fructificar",
+    "pdf": 42
+   }
+  },
+  {
+   "id": "M10",
+   "nombre": "Núcleo de coordinación",
+   "concepto": "El Estado",
+   "caps": [
+    "XIII",
+    "XIV"
+   ],
+   "cita": {
+    "texto": "la invitación que un grupo de hombres hace a otros grupos humanos para ejecutar juntos una empresa",
+    "pdf": 58
+   }
+  },
+  {
+   "id": "M11",
+   "nombre": "Indicador de responsabilidad",
+   "concepto": "Deber y exigencia",
+   "caps": [
+    "VII",
+    "XV"
+   ],
+   "cita": {
+    "texto": "La nobleza se define por la exigencia, por las obligaciones, no por los derechos.",
+    "pdf": 26
+   }
+  },
+  {
+   "id": "M12",
+   "nombre": "Corona de posibilidades",
+   "concepto": "El mundo ampliado",
+   "caps": [
+    "IV",
+    "V",
+    "IX"
+   ],
+   "cita": {
+    "texto": "Vivir es sentirse fatalmente forzado a ejercitar la libertad",
+    "pdf": 22
+   }
+  }
+ ],
+ "obra": [
+  {
+   "id": "prologo",
+   "titulo": "Prólogo para franceses",
+   "parte": "Paratexto (1937)",
+   "pdf": [
+    1,
+    10
+   ],
+   "tesis": "Escrito once años después del libro, Ortega relee su diagnóstico ante una Europa en crisis. Defiende que la unidad de Europa como sociedad ya es un hecho antiguo, advierte contra la homogeneización y recuerda que toda palabra se dice por alguien a alguien.",
+   "citas": [
+    {
+     "texto": "todo auténtico decir no sólo dice algo, sino que lo dice alguien a alguien",
+     "pdf": 1
+    },
+    {
+     "texto": "la unidad de Europa como sociedad no es un «ideal», sino un hecho",
+     "pdf": 3
+    }
+   ]
+  },
+  {
+   "id": "I",
+   "titulo": "El hecho de las aglomeraciones",
+   "parte": "Primera parte",
+   "pdf": [
+    11,
+    13
+   ],
+   "tesis": "El fenómeno visible es el lleno: ciudades, trenes y teatros repletos. Pero la masa no se define por la cantidad ni por la clase social, sino por una actitud: sentirse como todo el mundo y no angustiarse por ello. La división decisiva separa a quienes se exigen mucho de quienes no se exigen nada especial.",
+   "citas": [
+    {
+     "texto": "Masa es todo aquel que no se valora a sí mismo",
+     "pdf": 13
+    },
+    {
+     "texto": "las que se exigen mucho y acumulan sobre sí mismas dificultades y deberes",
+     "pdf": 13
+    }
+   ]
+  },
+  {
+   "id": "II",
+   "titulo": "La subida del nivel histórico",
+   "parte": "Primera parte",
+   "pdf": [
+    14,
+    15
+   ],
+   "tesis": "La masa ya no delega: interviene directamente y quiere dar fuerza de ley a sus tópicos. Lo nuevo no es que el vulgar se crea excelente, sino que reclame el derecho a la vulgaridad. A la vez, Ortega reconoce que el nivel medio de vida ha subido de forma real y valiosa.",
+   "citas": [
+    {
+     "texto": "ser diferente es indecente",
+     "pdf": 14
+    },
+    {
+     "texto": "la vida del hombre medio está ahora constituida por el repertorio vital que antes caracterizaba sólo a las minorías culminantes",
+     "pdf": 16
+    }
+   ]
+  },
+  {
+   "id": "III",
+   "titulo": "La altura de los tiempos",
+   "parte": "Primera parte",
+   "pdf": [
+    16,
+    18
+   ],
+   "tesis": "Nuestra época se siente superior a todas las anteriores y, a la vez, insegura de su rumbo. No se cree decadente ni plena: se cree más que el pasado, pero no sabe qué hacer con esa altura.",
+   "citas": [
+    {
+     "texto": "el pasado íntegro se le ha quedado chico a la humanidad actual",
+     "pdf": 19
+    }
+   ]
+  },
+  {
+   "id": "IV",
+   "titulo": "El crecimiento de la vida",
+   "parte": "Primera parte",
+   "pdf": [
+    19,
+    21
+   ],
+   "tesis": "El mundo ha crecido: distancias, ciencia, técnica y placeres al alcance de cualquiera. La vida es un repertorio de posibilidades, y precisamente por ser tan amplio nos obliga a elegir. Vivir es estar condenado a ejercer la libertad.",
+   "citas": [
+    {
+     "texto": "Vivir es sentirse fatalmente forzado a ejercitar la libertad",
+     "pdf": 22
+    }
+   ]
+  },
+  {
+   "id": "V",
+   "titulo": "Un dato estadístico",
+   "parte": "Primera parte",
+   "pdf": [
+    22,
+    23
+   ],
+   "tesis": "La población europea se multiplicó en un solo siglo. Las nuevas multitudes fueron llenadas de los instrumentos de la civilización, pero no de la conciencia de lo que los sostiene. Nuestra vida es magnífica como repertorio de posibilidades y, por lo mismo, ha desbordado los cauces heredados.",
+   "citas": [
+    {
+     "texto": "nuestra vida, como repertorio de posibilidades, es magnífica, exuberante",
+     "pdf": 22
+    }
+   ]
+  },
+  {
+   "id": "VI",
+   "titulo": "Comienza la disección del hombre-masa",
+   "parte": "Primera parte",
+   "pdf": [
+    24,
+    25
+   ],
+   "tesis": "El siglo XIX creó un mundo de facilidad material, democracia liberal y técnica. Quien nace en él tiende a dos rasgos: la libre expansión de sus deseos y una radical ingratitud hacia lo que hizo posible esa facilidad. Es la psicología del niño mimado.",
+   "citas": [
+    {
+     "texto": "la radical ingratitud hacia cuanto ha hecho posible la facilidad de su existencia",
+     "pdf": 25
+    }
+   ]
+  },
+  {
+   "id": "VII",
+   "titulo": "Vida noble y vida vulgar, o esfuerzo e inercia",
+   "parte": "Primera parte",
+   "pdf": [
+    26,
+    27
+   ],
+   "tesis": "La nobleza no es linaje ni privilegio: es exigencia. La vida noble se impone normas cada vez más difíciles; la vulgar se deja llevar. El noble originario se obliga a sí mismo; el heredero, en cambio, recibe la obligación sin haberla elegido.",
+   "citas": [
+    {
+     "texto": "La nobleza se define por la exigencia, por las obligaciones, no por los derechos.",
+     "pdf": 26
+    },
+    {
+     "texto": "El noble originario se obliga a sí mismo",
+     "pdf": 27
+    }
+   ]
+  },
+  {
+   "id": "VIII",
+   "titulo": "Por qué las masas intervienen en todo, y por qué sólo intervienen violentamente",
+   "parte": "Primera parte",
+   "pdf": [
+    28,
+    30
+   ],
+   "tesis": "El hombre-masa tiene opiniones sobre todo, pero no ideas: tener una idea supone creer que existen razones y someterse a ellas. Quien renuncia a dar razones acaba en la acción directa. Frente a ello, Ortega celebra el liberalismo como la decisión de convivir con el enemigo, incluso con el débil.",
+   "citas": [
+    {
+     "texto": "Tener una idea es creer que se poseen las razones de ella",
+     "pdf": 29
+    },
+    {
+     "texto": "el derecho a no tener razón, la razón de la sinrazón",
+     "pdf": 29
+    },
+    {
+     "texto": "El liberalismo -conviene hoy recordar esto- es la suprema generosidad",
+     "pdf": 30
+    }
+   ]
+  },
+  {
+   "id": "IX",
+   "titulo": "Primitivismo y técnica",
+   "parte": "Primera parte",
+   "pdf": [
+    30,
+    33
+   ],
+   "tesis": "La civilización no es naturaleza: no se sostiene sola, necesita artesanos que la mantengan. La técnica depende de la ciencia, y la ciencia de un interés desinteresado por la verdad. Quien usa los frutos sin cuidar sus raíces se comporta como un primitivo en medio de un mundo civilizado.",
+   "citas": [
+    {
+     "texto": "La civilización no está ahí, no se sostiene a sí misma.",
+     "pdf": 33
+    },
+    {
+     "texto": "La técnica es, consustancialmente, ciencia",
+     "pdf": 32
+    },
+    {
+     "texto": "la ciencia experimental es uno de los productos más improbables de la historia",
+     "pdf": 32
+    }
+   ]
+  },
+  {
+   "id": "X",
+   "titulo": "Primitivismo e historia",
+   "parte": "Primera parte",
+   "pdf": [
+    33,
+    34
+   ],
+   "tesis": "Una civilización avanzada es también una civilización con mucho pasado. El saber histórico es una técnica para conservar y continuar lo logrado, y sin él se repiten los errores. Los movimientos que pretenden empezar de cero carecen, según Ortega, de memoria.",
+   "citas": [
+    {
+     "texto": "El saber histórico es una técnica de primer orden para conservar y continuar una civilización",
+     "pdf": 34
+    }
+   ]
+  },
+  {
+   "id": "XI",
+   "titulo": "La época del «señorito satisfecho»",
+   "parte": "Primera parte",
+   "pdf": [
+    35,
+    37
+   ],
+   "tesis": "El tipo dominante cree que ha venido a la vida a hacer lo que le dé la gana, como el hijo de familia que hereda sin esfuerzo. Vive de lo que otros construyeron y lo trata como si fuera natural. Para Ortega es la forma más contradictoria de la vida humana.",
+   "citas": [
+    {
+     "texto": "un hombre que ha venido a la vida para hacer lo que le dé la gana",
+     "pdf": 37
+    },
+    {
+     "texto": "El pasado tiene razón, la suya.",
+     "pdf": 35
+    }
+   ]
+  },
+  {
+   "id": "XII",
+   "titulo": "La barbarie del «especialismo»",
+   "parte": "Primera parte",
+   "pdf": [
+    38,
+    40
+   ],
+   "tesis": "El científico especializado es el prototipo inesperado del hombre-masa. Conoce a fondo su parcela y, por eso mismo, opina con la arrogancia del experto en todo lo que ignora. Ortega no condena la especialización, sino la pérdida de visión del conjunto: lo llama el sabio-ignorante.",
+   "citas": [
+    {
+     "texto": "La ciencia no es especialista.",
+     "pdf": 39
+    },
+    {
+     "texto": "es un sabio-ignorante, cosa sobremanera grave",
+     "pdf": 40
+    }
+   ]
+  },
+  {
+   "id": "XIII",
+   "titulo": "El mayor peligro, el Estado",
+   "parte": "Primera parte",
+   "pdf": [
+    40,
+    43
+   ],
+   "tesis": "El Estado moderno es el producto más visible de la civilización y una maquinaria formidable. El hombre-masa lo cree suyo y le exige que lo resuelva todo. El peligro es que la sociedad acabe viviendo para el Estado, se burocratice y se militarice, hasta agotar la vitalidad que lo alimenta.",
+   "citas": [
+    {
+     "texto": "El Estado contemporáneo es el producto más visible y notorio de la civilización.",
+     "pdf": 42
+    },
+    {
+     "texto": "La sociedad tendrá que vivir para el Estado; el hombre, para la maquina del gobierno.",
+     "pdf": 42
+    }
+   ]
+  },
+  {
+   "id": "XIV",
+   "titulo": "¿Quién manda en el mundo?",
+   "parte": "Segunda parte",
+   "pdf": [
+    44,
+    62
+   ],
+   "tesis": "La rebelión de las masas tiene un anverso magnífico y un reverso de desmoralización. Mandar no es imponer por la fuerza, sino ejercer una autoridad sostenida por la opinión pública. Europa ha dejado de mandar sin que nadie ocupe su lugar, y eso deja la vida sin programa. La salida que propone es un nuevo proyecto común europeo.",
+   "citas": [
+    {
+     "texto": "la rebelión de las masas es una y misma cosa con el crecimiento fabuloso que la vida humana ha experimentado",
+     "pdf": 44
+    },
+    {
+     "texto": "La vida humana, por su naturaleza propia, tiene que estar puesta a algo",
+     "pdf": 49
+    }
+   ],
+   "apartados": [
+    {
+     "n": 1,
+     "pdf": [
+      44,
+      45
+     ],
+     "tesis": "Mandar es apoyarse en la opinión pública; ni siquiera quien gobierna con la fuerza escapa de ella."
+    },
+    {
+     "n": 2,
+     "pdf": [
+      46,
+      47
+     ],
+     "tesis": "Se ha hablado tanto de la decadencia europea que muchos la dan por un hecho sin haberla examinado."
+    },
+    {
+     "n": 3,
+     "pdf": [
+      47,
+      48
+     ],
+     "tesis": "Las naciones europeas se sienten estrechas: su decadencia relativa podría ser la condición de una unidad superior."
+    },
+    {
+     "n": 4,
+     "pdf": [
+      49,
+      50
+     ],
+     "tesis": "Mandar y obedecer son funciones decisivas; un mundo sin mando se desmoraliza porque la vida necesita estar puesta a algo."
+    },
+    {
+     "n": 5,
+     "pdf": [
+      50,
+      52
+     ],
+     "tesis": "La vida como programa: sin un quehacer común, los pueblos y las personas se dedican a ocupaciones falsas."
+    },
+    {
+     "n": 6,
+     "pdf": [
+      52,
+      54
+     ],
+     "tesis": "El Estado nace de la ciudad antigua: es una invitación a hacer algo juntos, no la mera administración de lo dado."
+    },
+    {
+     "n": 7,
+     "pdf": [
+      54,
+      58
+     ],
+     "tesis": "La nación no se funda en la sangre ni en el idioma, sino en un proyecto de futuro compartido."
+    },
+    {
+     "n": 8,
+     "pdf": [
+      58,
+      61
+     ],
+     "tesis": "El nacionalismo es un callejón sin salida: cada nación europea vive en realidad de lo que recibe de las demás."
+    },
+    {
+     "n": 9,
+     "pdf": [
+      61,
+      62
+     ],
+     "tesis": "Europa necesita un programa propio; sin él, otros proyectos ocuparán el vacío."
+    }
+   ]
+  },
+  {
+   "id": "XV",
+   "titulo": "Se desemboca en la verdadera cuestión",
+   "parte": "Segunda parte",
+   "pdf": [
+    63,
+    64
+   ],
+   "tesis": "La cuestión de fondo es moral: Europa se ha quedado sin moral. No porque cambie de moral, sino porque el hombre-masa rechaza toda sumisión a algo que no sea él mismo. Esa negación vive, paradójicamente, de lo que otros construyeron.",
+   "citas": [
+    {
+     "texto": "Europa se ha quedado sin moral.",
+     "pdf": 63
+    },
+    {
+     "texto": "El hombre-masa está aún viviendo precisamente de lo que niega y otros construyeron o acumularon.",
+     "pdf": 64
+    }
+   ]
+  },
+  {
+   "id": "epilogo",
+   "titulo": "Epílogo para ingleses",
+   "parte": "Paratexto (1938)",
+   "pdf": [
+    65,
+    67
+   ],
+   "tesis": "Ortega escribe a los ingleses durante la guerra civil española. Admira el modo en que Inglaterra sabe ser sociedad y critica la incomprensión exterior de España. Insiste en que el carácter nacional no es innato, sino una fabricación histórica.",
+   "citas": [
+    {
+     "texto": "la nación no nace, sino que se hace",
+     "pdf": 65
+    }
+   ],
+   "nota_texto": "En el PDF se ha perdido el título del epílogo; el texto se conserva."
+  },
+  {
+   "id": "pacifismo",
+   "titulo": "En cuanto al pacifismo",
+   "parte": "Paratexto (1937)",
+   "pdf": [
+    67,
+    77
+   ],
+   "tesis": "Desear la paz no basta. La guerra es un invento humano y solo otro invento puede sustituirla: un derecho internacional eficaz. Un pacifismo que no empieza por crear esa nueva técnica jurídica es ilusorio.",
+   "citas": [
+    {
+     "texto": "La guerra no es instinto, sino un invento.",
+     "pdf": 67
+    },
+    {
+     "texto": "La paz, por ejemplo, es el derecho como forma de trato entre los pueblos.",
+     "pdf": 68
+    }
+   ]
+  },
+  {
+   "id": "apendice",
+   "titulo": "Apéndice: Dinámica del tiempo",
+   "parte": "Artículos de El Sol (1927)",
+   "pdf": [
+    78,
+    87
+   ],
+   "tesis": "Tres artículos breves: «Los escaparates mandan», sobre el dinero como único criterio de distinción; «Juventud», sobre el predominio de lo juvenil; y «¿Masculino, o femenino?», sobre los ritmos históricos atribuidos a los sexos. Este último exige lectura crítica explícita.",
+   "citas": [
+    {
+     "texto": "el mundo es ciertamente un balón, pero con algo más que aire dentro",
+     "pdf": 83
+    }
+   ]
+  }
+ ],
+ "erratas_probables": 44
+}

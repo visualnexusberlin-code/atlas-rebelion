@@ -1,0 +1,373 @@
+[
+ {
+  "pdf_page": 1,
+  "forma": "sincere",
+  "correccion_propuesta": "sincero/sincera",
+  "contexto": "ira sería imposible si el hablar primario y normal no fuese sincere. La moneda falsa circula sostenida por la moneda sana. A la",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 1,
+  "forma": "abuse",
+  "correccion_propuesta": "abuso",
+  "contexto": "restigio. Como en tantas otras cosas, ha consistido aquí el abuse en el uso sin preocupaciones, sin conciencia de la limitaci",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 5,
+  "forma": "conjure",
+  "correccion_propuesta": "conjuro",
+  "contexto": "teresante averiguar qué ideas o imágenes se desperezaban al conjure de ese vocablo en la mente un tanto gaseosa del hombre ruso",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 6,
+  "forma": "secrete",
+  "correccion_propuesta": "secreto/secreta",
+  "contexto": " hombre, a una idéntica «situación». Evitar esto ha sido el secrete acierto de Europa hasta el día, y la conciencia de este sec",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 6,
+  "forma": "secrete",
+  "correccion_propuesta": "secreto/secreta",
+  "contexto": "ete acierto de Europa hasta el día, y la conciencia de este secrete es la que, clara o balbuciente, ha movido siempre ",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 9,
+  "forma": "concrete",
+  "correccion_propuesta": "concreto/concreta",
+  "contexto": "as revoluciones intenta la abstracción sublevarse contra lo concrete; por eso es consustancial a las revoluciones el fracaso. Lo",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 10,
+  "forma": "nurse",
+  "correccion_propuesta": null,
+  "contexto": "ueriles, y al fondo, detrás de ellos, Inglaterra... como la nurse de Europa. Este es el pueblo que siempre ha llegado antes a",
+  "estado": "forma_legitima_del_autor"
+ },
+ {
+  "pdf_page": 11,
+  "forma": "exclusive",
+  "correccion_propuesta": "exclusivo/exclusiva",
+  "contexto": " en forma que, si era la más favorable para aclarar el tema exclusive de este estudio, era la peor para dejar ver mi opinión sobr",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 13,
+  "forma": "piano",
+  "correccion_propuesta": "plano (en 'primer piano')",
+  "contexto": "os ellos indican que ésta ha resuelto adelantarse al primer piano social y ocupar los locales y usar los utensilios y gozar d",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 20,
+  "forma": "performances",
+  "correccion_propuesta": null,
+  "contexto": "otorio que en el esfuerzo físico y deportivo se cumplen hoy performances que superan enormemente a cuantas se conocen del pasado. No",
+  "estado": "forma_legitima_del_autor"
+ },
+ {
+  "pdf_page": 21,
+  "forma": "performances",
+  "correccion_propuesta": null,
+  "contexto": "os y las conversaciones le hacen llegar la noticia de estas performances intelectuales, que los aparatos técnicos recién inventados ",
+  "estado": "forma_legitima_del_autor"
+ },
+ {
+  "pdf_page": 30,
+  "forma": "extreme",
+  "correccion_propuesta": "extremo/extrema",
+  "contexto": "ntad de convivencia es la democracia liberal. Ella lleva al extreme la resolución de contar con el prójimo y es prototipo de la",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 33,
+  "forma": "capro",
+  "correccion_propuesta": null,
+  "contexto": " Leda, estremecido; al toro con Pasifae y a Antíope bajo el capro. Generalizando, hallaron un espectáculo más sutilmente inde",
+  "estado": "forma_legitima_del_autor"
+ },
+ {
+  "pdf_page": 35,
+  "forma": "piano",
+  "correccion_propuesta": "plano (en 'primer piano')",
+  "contexto": "gobernar el mundo. Esta resolución de adelantarse al primer piano social se ha producido en él, automáticamente, apenas llegó",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 38,
+  "forma": "motives",
+  "correccion_propuesta": "motivos",
+  "contexto": "tina en afirmar que cree dos más dos igual a cinco y no hay motives para suponerlo demente, debemos asegurar que no lo cree, po",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 41,
+  "forma": "secrete",
+  "correccion_propuesta": "secreto/secreta",
+  "contexto": "moverse en la lid, y a quien no se le había ocurrido que el secrete eterno de la guerra no consiste tanto en los medios de defe",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 41,
+  "forma": "secrete",
+  "correccion_propuesta": "secreto/secreta",
+  "contexto": "ste tanto en los medios de defensa como en los de agresión; secrete que iba a redescubrir Napoleón. Como el Estado es una técni",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 42,
+  "forma": "motives",
+  "correccion_propuesta": "motivos",
+  "contexto": "verdaderas revoluciones. Y no ciertamente porque no hubiese motives para ellas, sino porque no había medios. Se niveló el poder",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 43,
+  "forma": "concrete",
+  "correccion_propuesta": "concreto/concreta",
+  "contexto": "rupo, y agostar así definitivamente el porvenir? Un ejemplo concrete de este mecanismo lo hallamos en uno de los fenómenos más a",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 44,
+  "forma": "cases",
+  "correccion_propuesta": "casos/clases (cotejar)",
+  "contexto": "rráneo ignoraba la existencia del mundo extremooriental. En cases tales tendríamos que referir nuestra pregunta: «¿Quién mand",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 44,
+  "forma": "cases",
+  "correccion_propuesta": "casos/clases (cotejar)",
+  "contexto": "ión ese aparato o máquina social que se llama «fuerza». Los cases en que a primera vista parece ser la fuerza el fundamento d",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 44,
+  "forma": "reverse",
+  "correccion_propuesta": "reverso",
+  "contexto": " la vida humana ha experimentado en nuestro tiempo. Pero el reverse del mismo fenómeno es tremebundo; mirada por esa haz, la re",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 45,
+  "forma": "cases",
+  "correccion_propuesta": "casos/clases (cotejar)",
+  "contexto": " de la gravitación histórica, conviene tener en cuenta esos cases de ausencia, y entonces se llega a una fórmula que es el co",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 49,
+  "forma": "sincere",
+  "correccion_propuesta": "sincero/sincera",
+  "contexto": " sí misma, se dedica a falsas ocupaciones, que nada íntimo, sincere, impone. Hoy es una cosa; mañana, otra, opuesta a la primer",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 50,
+  "forma": "cases",
+  "correccion_propuesta": "casos/clases (cotejar)",
+  "contexto": "alguna parte? Porque podría muy bien ocurrir que, en muchos cases, el español no va a nada, no tiene proyecto ni misión, sino",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 50,
+  "forma": "cases",
+  "correccion_propuesta": "casos/clases (cotejar)",
+  "contexto": " para ver si las de otros llenan un poco la suya. En muchos cases me consta que mis compatriotas salen a la calle por ver si ",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 55,
+  "forma": "secrete",
+  "correccion_propuesta": "secreto/secreta",
+  "contexto": "aquella política, que tomar sus actos y darle su nombre. El secrete está en su hazaña capital: la conquista de las Galias. Para",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 57,
+  "forma": "extreme",
+  "correccion_propuesta": "extremo/extrema",
+  "contexto": " tipos de Estado, como el Estado-ciudad o, yéndonos al otro extreme, como el Imperio que Augusto fundó. Si se quiere formular e",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 58,
+  "forma": "secrete",
+  "correccion_propuesta": "secreto/secreta",
+  "contexto": " parezca cometerla ahora. Es preciso resolverse a buscar el secrete del Estado nacional en su peculiar inspiración como tal Est",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 61,
+  "forma": "extreme",
+  "correccion_propuesta": "extremo/extrema",
+  "contexto": "o que sienta la inevitabilidad de su política, y cuanto más extreme es su gesto, más frívolo, menos exigido por el destino. No ",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 62,
+  "forma": "concrete",
+  "correccion_propuesta": "concreto/concreta",
+  "contexto": "amente y pierda toda su energía histórica agrégase otro muy concrete e inminente. Cuando el comunismo triunfó en Rusia, creyeron",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 66,
+  "forma": "extreme",
+  "correccion_propuesta": "extremo/extrema",
+  "contexto": "s corregir con un esfuerzo increíble de self-control lo más extreme del mal. Acaso. Ha contribuido a que adopte esta resolución",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 66,
+  "forma": "faces",
+  "correccion_propuesta": "faces/caras (cotejar)",
+  "contexto": "undo para decirse, sino al contrario, para silenciarse. Con faces impasibles, puestos detrás de sus pipas, veían los ingleses",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 68,
+  "forma": "concrete",
+  "correccion_propuesta": "concreto/concreta",
+  "contexto": "la carencia de las técnicas más elementales, cuyo ejercicio concrete y preciso constituye eso que, con un vago nombre, llamamos ",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 73,
+  "forma": "concrete",
+  "correccion_propuesta": "concreto/concreta",
+  "contexto": "n otro fenómeno opuesto, que es el que ha inspirado de modo concrete todo este artículo. Me refiero a un gigantesco hecho cuyos ",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 74,
+  "forma": "improvise",
+  "correccion_propuesta": "improviso",
+  "contexto": "dificador desconocido. ¡Error! pueblos se han encontrado de improvise dinámicamente más próximos. Y esto acontece precisamente a ",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 75,
+  "forma": "concrete",
+  "correccion_propuesta": "concreto/concreta",
+  "contexto": "nada contra esos escritores ingleses. Por eso es un ejemplo concrete del mecanismo belicoso que ha creado el mutuo desconocimien",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 75,
+  "forma": "motives",
+  "correccion_propuesta": "motivos",
+  "contexto": " de intervención. Siempre hay, además, intrigantes que, por motives particulares, se ocupan deliberadamente en hostigarla. Vice",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 76,
+  "forma": "concrete",
+  "correccion_propuesta": "concreto/concreta",
+  "contexto": "que pastorea se ocupan en favorecer y fomentar del modo más concrete y eficaz el «frente popular» que se ha formado en otros paí",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 79,
+  "forma": "exclusive",
+  "correccion_propuesta": "exclusivo/exclusiva",
+  "contexto": " esto ha acaecido varias veces en la historia. Lo nuevo, lo exclusive del presente es esta otra coyuntura. El dinero ha tenido, p",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 79,
+  "forma": "motive",
+  "correccion_propuesta": "motivo",
+  "contexto": "una constitución política y moral, se queda la sociedad sin motive que jerarquice a los hombres. Ahora bien: esto es imposible",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 80,
+  "forma": "extreme",
+  "correccion_propuesta": "extremo/extrema",
+  "contexto": "parece evidente es que nuestro tiempo se caracteriza por el extreme predominio de los jóvenes. Es sorprendente que en pueblos t",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 80,
+  "forma": "extremes",
+  "correccion_propuesta": "extremos",
+  "contexto": "icas -diluvios, sumersión de continentes, cambios súbitos y extremes de clima-, como en los mitos más arcaicos parece recordarse",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 81,
+  "forma": "exclusive",
+  "correccion_propuesta": "exclusivo/exclusiva",
+  "contexto": "e las bien conocidas, el predominio ha sido tan extremado y exclusive. En los siglos clásicos de Grecia la vida toda se organiza ",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 82,
+  "forma": "cases",
+  "correccion_propuesta": "casos/clases (cotejar)",
+  "contexto": "ctoria. Por eso aparece con más pureza que nunca en ciertos cases de guerra defensiva que concluyeron con la completa derrota",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 84,
+  "forma": "deport",
+  "correccion_propuesta": null,
+  "contexto": "rado, grácil. A la continua pendencia sustituye el solatz e deport -que quiere decir conversación y juego. La mutación se debe",
+  "estado": "forma_legitima_del_autor"
+ },
+ {
+  "pdf_page": 85,
+  "forma": "curve",
+  "correccion_propuesta": "curvo",
+  "contexto": "cedad. Nada parecía hoy más obsoleto que el gesto rendido y curve con que el caballero bravucón de 1890 se acercaba a la muje",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 85,
+  "forma": "cortezia",
+  "correccion_propuesta": null,
+  "contexto": "do el terreno había hecho caer la Iglesia. Ahora aparece la cortezia triunfadora de la clerezia. Y la cortezia es, ante todo, el",
+  "estado": "forma_legitima_del_autor"
+ },
+ {
+  "pdf_page": 85,
+  "forma": "cortezia",
+  "correccion_propuesta": null,
+  "contexto": " Ahora aparece la cortezia triunfadora de la clerezia. Y la cortezia es, ante todo, el régimen de vida que va inspirado por el e",
+  "estado": "forma_legitima_del_autor"
+ },
+ {
+  "pdf_page": 85,
+  "forma": "trova",
+  "correccion_propuesta": null,
+  "contexto": " poco la gesta en que se canta al héroe varonil y tornea la trova que ha sido inventada. sol per domnas lauzar. El caballero ",
+  "estado": "forma_legitima_del_autor"
+ },
+ {
+  "pdf_page": 86,
+  "forma": "motive",
+  "correccion_propuesta": "motivo",
+  "contexto": " comprenderá un hecho como el acaecido en el siglo XVII con motive de la beatificación de varios santos españoles -entre ellos",
+  "estado": "errata_probable"
+ },
+ {
+  "pdf_page": 86,
+  "forma": "cortezia",
+  "correccion_propuesta": null,
+  "contexto": "a sea en nuestros días tan áspera. Inventora la mujer de la cortezia, su retirada del primer piano social ha traído el imperio d",
+  "estado": "forma_legitima_del_autor"
+ },
+ {
+  "pdf_page": 86,
+  "forma": "piano",
+  "correccion_propuesta": "plano (en 'primer piano')",
+  "contexto": ". Inventora la mujer de la cortezia, su retirada del primer piano social ha traído el imperio de la ·: descortesía. Hoy no se",
+  "estado": "errata_probable"
+ }
+]

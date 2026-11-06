@@ -1,0 +1,6 @@
+node_modules/
+video/out/
+video/.remotion/
+content/fuente/*.txt
+content/fuente/*.pdf
+.DS_Store

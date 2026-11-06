@@ -1,0 +1,518 @@
+<title>La Bóveda de Ortega</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Josefin+Sans:wght@300;400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Concepto: un mecanismo Déco luminoso a pantalla completa. Cada tensión del libro reorganiza las mismas piezas en una figura propia; el texto se despliega a su lado en una columna amplia, sobre la noche. */
+:root{
+  --night:#06090e;       /* fondo */
+  --deep:#0c1520;        /* superficie */
+  --gold:#f2c879;        /* glow principal, rótulos */
+  --brass:#b8924f;       /* filetes */
+  --paper:#efe6d2;       /* texto de lectura */
+  --muted:#a59a86;       /* texto secundario */
+  --line:rgba(242,200,121,.22);
+  --o:#f2c879;           /* plano Ortega */
+  --a:#7fd8ff;           /* plano hoy */
+  --c:#ff8470;           /* plano contrapunto */
+  --accent:#f2c879;      /* lo cambia cada tensión */
+  --deco:"Poiret One","Josefin Sans",Futura,"Century Gothic",sans-serif;
+  --label:"Josefin Sans",Futura,"Avenir Next",system-ui,sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--night);color:var(--paper);font-family:var(--serif);overflow:hidden}
+#bg{position:fixed;inset:0;background:
+  radial-gradient(ellipse 70% 60% at 50% 46%,rgba(242,200,121,.07),transparent 70%),
+  repeating-conic-gradient(from 0deg at 50% 46%,rgba(242,200,121,.035) 0 1deg,transparent 1deg 7.5deg),
+  radial-gradient(ellipse at 50% 120%,#0d1a26 0,var(--night) 60%);transition:background-position 1.2s}
+body.reading #bg{background-position:-22vw 0,-22vw 0,0 0}
+#gl{position:fixed;inset:0;width:100%;height:100%;display:block;outline:none}
+#gl:focus-visible{outline:2px solid var(--gold);outline-offset:-4px}
+
+/* Cabecera */
+.top{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding-top:calc(14px + env(safe-area-inset-top,0px));padding-bottom:10px;
+  padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));
+  background:linear-gradient(var(--night) 30%,transparent)}
+.brand{display:flex;flex-direction:column;gap:3px;background:none;border:0;color:inherit;text-align:left;cursor:pointer;padding:0}
+.brand b{font-family:var(--deco);font-weight:400;font-size:clamp(1.05rem,1.9vw,1.45rem);letter-spacing:.24em;text-transform:uppercase;color:var(--gold);text-shadow:0 0 18px rgba(242,200,121,.45)}
+.brand span{font-family:var(--label);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.nav{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+.nav button{font-family:var(--label);font-weight:600;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);background:none;border:0;padding:8px 10px;cursor:pointer;border-bottom:1px solid transparent}
+.nav button:hover{color:var(--paper)}
+.nav button[aria-current="page"]{color:var(--gold);border-bottom-color:var(--gold)}
+.uni{display:flex;align-items:center;gap:8px;margin-left:8px;padding-left:12px;border-left:1px solid var(--line)}
+.uni label{font-family:var(--label);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.uni input{width:96px;accent-color:var(--accent)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* Portal */
+.hint{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:3;width:min(34rem,calc(100% - 32px));text-align:center;
+  font-family:var(--serif);font-style:italic;font-size:1.05rem;line-height:1.5;color:var(--paper);text-shadow:0 2px 14px #000;transition:opacity .6s}
+.hint b{font-style:normal;font-weight:600;color:var(--gold)}
+body.reading .hint{opacity:0;pointer-events:none}
+
+/* Dial de las seis tensiones */
+.dial{position:fixed;left:0;right:0;bottom:0;z-index:5;display:flex;justify-content:center;gap:2px;flex-wrap:wrap;
+  padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));padding-top:18px;padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px));
+  background:linear-gradient(transparent,var(--night) 55%)}
+.dial button{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:92px;padding:8px 10px 6px;background:none;border:0;cursor:pointer;color:var(--muted);position:relative}
+.dial button i{font-style:normal;font-family:var(--deco);font-size:1.25rem;color:var(--brass);line-height:1}
+.dial button span{font-family:var(--label);font-weight:600;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase}
+.dial button::after{content:"";position:absolute;left:30%;right:30%;bottom:0;height:2px;background:var(--c-acc,var(--gold));opacity:0;transition:opacity .3s;box-shadow:0 0 10px var(--c-acc,var(--gold))}
+.dial button:hover{color:var(--paper)}
+.dial button[aria-current="true"]{color:var(--paper)}
+.dial button[aria-current="true"] i{color:var(--c-acc,var(--gold));text-shadow:0 0 14px var(--c-acc,var(--gold))}
+.dial button[aria-current="true"]::after,.dial button.chosen::after{opacity:1}
+.dial button.chosen::after{opacity:.45}
+.dial .sep{width:1px;background:var(--line);margin:6px 8px}
+
+/* Panel de lectura */
+.panel{position:fixed;z-index:4;top:0;bottom:0;right:0;width:min(44rem,56vw);overflow-y:auto;overscroll-behavior:contain;
+  padding-top:calc(96px + env(safe-area-inset-top,0px));padding-bottom:calc(110px + env(safe-area-inset-bottom,0px));
+  padding-left:clamp(24px,4vw,64px);padding-right:max(clamp(20px,3vw,48px),env(safe-area-inset-right,0px));
+  background:linear-gradient(90deg,rgba(6,9,14,0) 0,rgba(6,9,14,.82) 9%,rgba(6,9,14,.94) 30%);
+  opacity:0;pointer-events:none;transition:opacity .5s}
+body.reading .panel{opacity:1;pointer-events:auto}
+.panel:focus{outline:none}
+.col{max-width:38rem}
+.unfold>*{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.unfold>*:nth-child(2){animation-delay:.08s}.unfold>*:nth-child(3){animation-delay:.16s}.unfold>*:nth-child(4){animation-delay:.24s}
+.unfold>*:nth-child(5){animation-delay:.32s}.unfold>*:nth-child(6){animation-delay:.4s}.unfold>*:nth-child(n+7){animation-delay:.48s}
+@keyframes rise{from{opacity:0;transform:translateY(18px);clip-path:inset(0 0 100% 0)}to{opacity:1;transform:none;clip-path:inset(0 0 0 0)}}
+.eyebrow{font-family:var(--label);font-weight:600;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);margin:0}
+.title{font-family:var(--deco);font-weight:400;font-size:clamp(2.1rem,4.2vw,3.5rem);line-height:1.08;letter-spacing:.02em;margin:10px 0 6px;color:var(--paper);text-wrap:balance;
+  text-shadow:0 0 28px color-mix(in srgb,var(--accent) 45%,transparent)}
+.loc{font-family:var(--label);font-size:.72rem;letter-spacing:.12em;color:var(--muted);font-variant-numeric:tabular-nums}
+.rule{display:flex;align-items:center;gap:10px;margin:22px 0 18px;color:var(--accent)}
+.rule::before,.rule::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,currentColor,transparent);opacity:.6}
+.rule svg{width:34px;height:14px}
+section.block{margin:0 0 30px}
+.block h3{font-family:var(--label);font-weight:600;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;margin:0 0 12px;display:flex;align-items:center;gap:10px}
+.block h3 .gem{width:11px;height:11px;transform:rotate(45deg);flex:none;box-shadow:0 0 10px currentColor;background:currentColor}
+.ortega h3{color:var(--o)} .hoy h3{color:var(--a)} .contra h3{color:var(--c)}
+.big{font-family:var(--serif);font-size:clamp(1.3rem,2vw,1.6rem);line-height:1.38;margin:0 0 14px;text-wrap:pretty}
+.block p{font-size:1.06rem;line-height:1.65;margin:0 0 12px}
+blockquote{margin:14px 0;padding:2px 0 2px 18px;border-left:2px solid var(--o);font-style:italic;font-size:1.06rem;line-height:1.55;color:#f5ead2}
+blockquote cite{display:block;font-style:normal;font-family:var(--label);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 10px}
+.door{position:relative;text-align:left;cursor:pointer;color:var(--paper);background:rgba(12,21,32,.7);border:1px solid var(--line);padding:22px 18px 18px;min-height:132px;
+  clip-path:polygon(0 14px,14px 14px,14px 0,calc(100% - 14px) 0,calc(100% - 14px) 14px,100% 14px,100% 100%,0 100%);transition:border-color .3s,background .3s,box-shadow .3s}
+.door i{display:block;font-style:normal;font-family:var(--deco);font-size:1.6rem;color:var(--a);margin-bottom:8px;text-shadow:0 0 12px rgba(127,216,255,.5)}
+.door b{display:block;font-weight:400;font-size:1.12rem;line-height:1.35}
+.door:hover{border-color:rgba(127,216,255,.55)}
+.door[aria-pressed="true"]{border-color:var(--a);background:rgba(127,216,255,.1);box-shadow:inset 0 0 40px rgba(127,216,255,.12)}
+.door:disabled{opacity:.45;cursor:not-allowed}
+.reading{border:1px solid rgba(127,216,255,.3);padding:18px;margin-top:6px;background:rgba(12,21,32,.55)}
+.reading dl{margin:0;display:grid;gap:14px}
+.reading dt{font-family:var(--label);font-weight:600;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--a)}
+.reading dt.k2{color:var(--brass)} .reading dt.k3{color:var(--c)}
+.reading dd{margin:4px 0 0;font-size:1.02rem;line-height:1.6}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:12px;font-family:var(--label);font-size:.72rem;letter-spacing:.06em;color:var(--muted)}
+.chain span{padding:3px 8px;border:1px solid var(--line);color:var(--paper)}
+.choose-hint{font-size:.9rem;color:var(--muted);font-style:italic;margin:4px 0 0}
+.carry{position:relative;padding:22px 22px 20px;border:1px solid var(--accent);background:radial-gradient(ellipse at 0 0,color-mix(in srgb,var(--accent) 14%,transparent),transparent 70%)}
+.carry::before{content:"";position:absolute;inset:5px;border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);pointer-events:none}
+.carry .q{font-family:var(--deco);font-size:clamp(1.45rem,2.4vw,1.9rem);line-height:1.25;margin:8px 0 10px;color:var(--paper)}
+.carry p.ex{font-style:italic;color:#cfc4ad;margin:0;font-size:1rem;line-height:1.5}
+.notice{border:1px solid var(--gold);background:rgba(242,200,121,.08);padding:12px 14px;margin:0 0 20px;font-family:var(--label);font-size:.8rem;line-height:1.5;letter-spacing:.03em}
+.notice button{margin-top:8px;display:block}
+.pager{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:34px;padding-top:18px;border-top:1px solid var(--line)}
+.btn{font-family:var(--label);font-weight:600;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);background:none;border:1px solid rgba(242,200,121,.5);padding:11px 14px;cursor:pointer}
+.btn:hover{background:rgba(242,200,121,.1)}
+.btn.solid{background:var(--gold);color:var(--night);border-color:var(--gold)}
+details.src{margin-top:22px;border-top:1px solid var(--line);padding-top:12px}
+details.src summary{cursor:pointer;font-family:var(--label);font-weight:600;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);padding:6px 0}
+.chap{padding:14px 0;border-bottom:1px solid rgba(242,200,121,.1)}
+.chap h4{margin:0 0 4px;font-family:var(--label);font-weight:600;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--paper)}
+.chap p{font-size:1rem;line-height:1.6;margin:8px 0}
+.chap ol{margin:6px 0 0;padding-left:1.3em;font-size:.95rem;line-height:1.55}
+.minute{list-style:none;margin:0;padding:0;counter-reset:m;display:grid;gap:16px}
+.minute li{counter-increment:m;display:grid;grid-template-columns:2.2rem 1fr;gap:12px;font-size:1.12rem;line-height:1.55}
+.minute li::before{content:counter(m,upper-roman);font-family:var(--deco);font-size:1.3rem;color:var(--gold);text-shadow:0 0 10px rgba(242,200,121,.5)}
+.ledger{display:grid;gap:12px;margin:14px 0}
+.ledger div{padding:12px 14px;border-left:2px solid var(--a);background:rgba(12,21,32,.6)}
+.ledger b{font-family:var(--label);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--a);font-weight:600}
+.ledger p{margin:4px 0 0;font-size:.98rem;line-height:1.5}
+.qs{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.qs li{display:grid;grid-template-columns:2.2rem 1fr;gap:10px;font-size:1.08rem;line-height:1.45}
+.qs li i{font-style:normal;font-family:var(--deco);color:var(--accent)}
+.note{font-family:var(--label);font-size:.74rem;line-height:1.6;letter-spacing:.03em;color:var(--muted);margin-top:20px}
+.caption{position:fixed;z-index:6;left:50%;transform:translateX(-50%);top:calc(92px + env(safe-area-inset-top,0px));width:min(32rem,calc(100% - 32px));text-align:center;
+  font-family:var(--label);font-size:.78rem;letter-spacing:.06em;line-height:1.5;color:var(--paper);background:rgba(6,9,14,.82);border:1px solid var(--line);padding:9px 12px;opacity:0;transition:opacity .5s;pointer-events:none}
+.caption.show{opacity:1}
+.tip{position:fixed;z-index:6;pointer-events:none;font-family:var(--label);font-weight:600;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--paper);background:rgba(6,9,14,.9);border:1px solid var(--line);padding:6px 9px;transform:translate(14px,14px);white-space:nowrap}
+.short{display:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+@media (max-width:899px){
+  .top{gap:4px;padding-bottom:4px}
+  .brand span{display:none}
+  .brand b{font-size:.95rem;letter-spacing:.18em}
+  .nav{width:100%;justify-content:space-between;flex-wrap:nowrap}
+  .nav nav{display:flex}
+  .long{display:none}.short{display:inline}
+  .nav button{padding:6px 7px;font-size:.6rem;letter-spacing:.14em}
+  .uni{margin-left:0;padding-left:8px}
+  .uni label{display:none}.uni input{width:70px}
+  .panel{width:100%;top:38%;padding-top:28px;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px));
+    background:linear-gradient(rgba(6,9,14,0) 0,rgba(6,9,14,.92) 26px,rgba(6,9,14,.97) 100%)}
+  .title{font-size:2rem}
+  .doors{grid-template-columns:1fr}
+  .door{min-height:0}
+  .dial button{min-width:0;padding:6px 6px 5px}
+  .dial button span{display:none}
+  .dial button i{font-size:1.1rem}
+  .hint{bottom:calc(70px + env(safe-area-inset-bottom,0px));font-size:.95rem}
+  body.reading #bg{background-position:0 -18vh,0 -18vh,0 0}
+}
+@media (prefers-reduced-motion:reduce){.unfold>*{animation:none}#bg,.panel,.hint{transition:none}}
+</style>
+
+<div id="bg" aria-hidden="true"></div>
+<canvas id="gl" tabindex="0" aria-label="Mecanismo de la bóveda. Seis sectores, uno por cada tensión del libro. Flechas para recorrerlos, Intro para entrar."></canvas>
+
+<header class="top">
+  <button class="brand" type="button" id="home"><b>La rebelión de las masas</b><span>José Ortega y Gasset · 1930 · Bóveda</span></button>
+  <div class="nav">
+    <nav aria-label="Secciones">
+      <button type="button" data-go="portal">Bóveda</button>
+      <button type="button" data-go="minuto"><span class="long">El libro en un minuto</span><span class="short">Un minuto</span></button>
+      <button type="button" data-go="centro"><span class="long">El centro</span><span class="short">Centro</span></button>
+      <button type="button" data-go="obra"><span class="long">La obra</span><span class="short">Obra</span></button>
+    </nav>
+    <div class="uni"><label for="uni">Uniformar</label><input id="uni" type="range" min="0" max="100" value="0" aria-describedby="uniHelp"><span id="uniHelp" class="sr">Experimento: al uniformar, los colores y el propio texto pierden sus diferencias.</span></div>
+  </div>
+</header>
+
+<p class="hint" id="hint"><b>Seis tensiones de un libro de 1930 que siguen abiertas.</b><br>Toca un sector de la bóveda. Cada uno reorganiza el mecanismo y despliega una pregunta.</p>
+<div class="tip" id="tip" hidden></div>
+<p class="caption" id="caption" role="status"></p>
+
+<article class="panel" id="panel" tabindex="-1" aria-live="polite"><div class="col" id="col"></div></article>
+
+<nav class="dial" id="dial" aria-label="Las seis tensiones"></nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/GammaCorrectionShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+<script>
+const DATA=/*__DATA__*/null;
+const T=DATA.tensiones, OBRA=Object.fromEntries(DATA.obra.map(s=>[s.id,s])), PIEZAS=Object.fromEntries(DATA.piezas.map(p=>[p.id,p]));
+const DEPS={M02:["M01"],M03:["M02"],M12:["M03","M11"],M04:["M03"],M05:["M04"],M06:["M02"],M07:["M06"],M08:["M07"],M10:["M07","M09"],M09:["M08"],M11:["M10","M09"]};
+const NUM=["I","II","III","IV","V","VI"];
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const S={view:"portal",n:null,choices:new Map(),visited:new Set(),u:0};
+const $=s=>document.querySelector(s), col=$("#col"), panel=$("#panel");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const band=()=>S.u>=.7?"plano":S.u>=.35?"comprimido":"claro";
+let Mech=null, capT=0;
+function say(t,ms=4200){const c=$("#caption");c.textContent=t;c.classList.add("show");clearTimeout(capT);capT=setTimeout(()=>c.classList.remove("show"),ms)}
+const RULE=`<div class="rule" aria-hidden="true"><svg viewBox="0 0 34 14"><path d="M1 7h8l4-5 4 5 4-5 4 5h8" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M17 4l3 3-3 3-3-3z" fill="currentColor"/></svg></div>`;
+
+/* ---------- Dial ---------- */
+function drawDial(){
+  $("#dial").innerHTML=T.map((t,i)=>`<button type="button" data-t="${i}" style="--c-acc:${t.acento}" aria-current="${S.view==="t"&&S.n===i}" class="${S.choices.has(i)?"chosen":""}" aria-label="Tensión ${NUM[i]}: ${esc(t.titulo)}"><i>${NUM[i]}</i><span>${esc(t.corto)}</span></button>`).join("")
+   +`<span class="sep" aria-hidden="true"></span><button type="button" data-go="centro" aria-current="${S.view==="centro"}" aria-label="El centro"><i>◇</i><span>Centro</span></button>`;
+  $("#dial").querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>go("t",+b.dataset.t));
+  $("#dial").querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>go(b.dataset.go));
+  document.querySelectorAll(".nav [data-go]").forEach(b=>b.setAttribute("aria-current",b.dataset.go===S.view?"page":"false"));
+}
+
+/* ---------- Vistas ---------- */
+function upstream(id,acc=[],seen=new Set()){(DEPS[id]||[]).forEach(d=>{if(!seen.has(d)){seen.add(d);acc.push(d);upstream(d,acc,seen)}});return acc}
+function cite(c){return `<blockquote>${esc(c.texto)}<cite>${c.cap.length<5?"Cap. "+c.cap:esc(OBRA[c.cap].titulo)} · p. ${c.pdf} del PDF de trabajo</cite></blockquote>`}
+function chapterBlock(id){const s=OBRA[id]; if(!s) return "";
+  return `<div class="chap"><h4>${s.id.length<5?"Cap. "+s.id+" · ":""}${esc(s.titulo)}</h4><div class="loc">${esc(s.parte)} · pp. ${s.pdf[0]}–${s.pdf[1]}</div><p>${esc(s.tesis)}</p>${(s.citas||[]).map(c=>cite({...c,cap:s.id})).join("")}${s.apartados?`<ol>${s.apartados.map(a=>`<li>${esc(a.tesis)} <span class="loc">pp. ${a.pdf[0]}–${a.pdf[1]}</span></li>`).join("")}</ol>`:""}${s.nota_texto?`<p class="loc">${esc(s.nota_texto)}</p>`:""}</div>`}
+function notice(){if(band()==="claro")return "";
+  return `<div class="notice"><b>${band()==="plano"?"Texto uniformado.":"Texto comprimido."}</b> ${band()==="plano"?"Las dos lecturas ya no se distinguen y no puedes elegir: así suena una opinión sin diferencias.":"Parte del contexto y de las objeciones ha desaparecido."} Las citas de Ortega no cambian.<button class="btn" type="button" data-restore>Restituir los matices</button></div>`}
+function tension(i){
+  const t=T[i], ch=S.choices.get(i), has=ch!==undefined, L=has?t.lecturas[ch]:null, flat=band()==="plano", comp=band()==="comprimido";
+  S.visited.add(i);
+  let h=`<p class="eyebrow">Tensión ${NUM[i]} de VI · ${esc(t.cap_label)}</p><h1 class="title">${esc(flat?"Todos hacia el mismo lado":t.titulo)}</h1><p class="loc">${esc(t.fuente)}</p>${RULE}${notice()}`;
+  h+=`<section class="block ortega"><h3><span class="gem"></span>Lo que vio Ortega</h3><p class="big">${esc(t.ortega_idea)}</p>${comp||flat?"":`<p>${esc(t.ortega_largo)}</p>`}${t.citas.map(cite).join("")}</section>`;
+  h+=`<section class="block hoy"><h3><span class="gem"></span>La tensión hoy</h3><p class="big">${esc(flat?t.aplanado:t.pregunta)}</p>
+    <div class="doors">${t.lecturas.map((l,k)=>`<button type="button" class="door" data-choice="${k}" aria-pressed="${ch===k}" ${flat?"disabled":""}><i>${k?"II":"I"}</i><b>${esc(flat?"Una solución eficaz para todos":comp?l.corto:l.etiqueta)}</b></button>`).join("")}</div>`;
+  if(!has&&!flat)h+=`<p class="choose-hint">Elige una puerta para leer qué ilumina y qué deja fuera. Puedes cambiar cuando quieras.</p>`;
+  if(has&&!flat){const chain=[L.pieza,...upstream(L.pieza)];
+    h+=`<div class="reading"><dl><div><dt>Esta lectura</dt><dd>${esc(comp?L.lectura.split(". ")[0]+".":L.lectura)}</dd></div>${comp?"":`<div><dt class="k2">Lo que deja fuera</dt><dd>${esc(L.deja_fuera)}</dd></div><div><dt class="k3">Y sin embargo</dt><dd>${esc(L.objecion)}</dd></div>`}</dl>
+      <div class="chain" aria-label="Lo que sostiene esta lectura">Se apoya en ${chain.map(id=>`<span>${esc(PIEZAS[id].concepto)}</span>`).join("←")}</div></div>`;
+    if(!comp)h+=`<p class="big" style="margin-top:18px;font-size:1.12rem;font-style:italic">${esc(t.fisura)}</p>`}
+  h+=`</section>`;
+  if(!flat)h+=`<section class="block contra"><h3><span class="gem"></span>Lo que hay que discutirle a Ortega</h3><p>${esc(t.contrapunto)}</p></section>`;
+  h+=`<section class="block"><div class="carry"><p class="eyebrow">Para llevarte</p><p class="q">${esc(t.herramienta)}</p>${flat?"":`<p class="ex">${esc(t.ejemplo)}</p>`}</div></section>`;
+  h+=`<details class="src"><summary>El texto de Ortega · capítulos de esta tensión</summary>${t.caps.map(chapterBlock).join("")}</details>`;
+  h+=`<div class="pager">${i>0?`<button class="btn" type="button" data-t="${i-1}">← ${esc(T[i-1].corto)}</button>`:`<button class="btn" type="button" data-go="minuto">← El libro en un minuto</button>`}${i<5?`<button class="btn solid" type="button" data-t="${i+1}">${esc(T[i+1].corto)} →</button>`:`<button class="btn solid" type="button" data-go="centro">Al centro →</button>`}</div>`;
+  return h;
+}
+function minuto(){
+  return `<p class="eyebrow">Antes de entrar</p><h1 class="title">El libro en un minuto</h1><p class="loc">Madrid, 1926–1930 · prólogos y epílogo de 1937–1938</p>${RULE}
+   <ol class="minute">${DATA.libro_minuto.map(l=>`<li>${esc(l)}</li>`).join("")}</ol>
+   <section class="block contra" style="margin-top:28px"><h3><span class="gem"></span>Leerlo con ojos de hoy</h3><p>${esc(DATA.lectura_critica)}</p></section>
+   <section class="block"><h3 style="color:var(--gold)"><span class="gem"></span>Cómo funciona la bóveda</h3>
+   <p>El anillo de la bóveda tiene <b>seis sectores, uno por cada tensión</b> que el libro deja abierta. Al entrar en uno, el mecanismo se reorganiza en una figura propia y aparece el texto: primero lo que vio Ortega, después la tensión de hoy, con dos lecturas posibles.</p>
+   <p>El control <b>Uniformar</b> es un experimento: quita las diferencias a los colores y también al texto. Es la amenaza que Ortega veía en una sociedad donde todos opinan igual sin dar razones.</p>
+   <p>En <b>el centro</b> se reúne lo que has elegido y las seis preguntas para pensar fuera de aquí.</p></section>
+   <div class="pager"><span></span><button class="btn solid" type="button" data-t="0">Empezar: ${esc(T[0].corto)} →</button></div>`;
+}
+function centro(){
+  const qs=T.map((t,i)=>`<li><i>${NUM[i]}</i><span>${esc(t.herramienta)}</span></li>`).join("");
+  const led=[...S.choices].sort((a,b)=>a[0]-b[0]).map(([i,k])=>`<div><b>${esc(T[i].corto)} · elegiste «${esc(T[i].lecturas[k].corto)}»</b><p>${esc(T[i].lecturas[k].deja_fuera)}</p></div>`).join("");
+  return `<p class="eyebrow">El centro de la bóveda</p><h1 class="title">Lo que usas no se sostiene solo.</h1><p class="loc">Formulación nuestra a partir de los capítulos IX y XV</p>${RULE}
+   <p class="big">En el centro no hay un tesoro ni un veredicto. Hay una pregunta: ¿qué decides sostener, sin impedir que otros puedan cambiarlo?</p>
+   <section class="block hoy"><h3><span class="gem"></span>Tu recorrido</h3>${led?`<div class="ledger">${led}</div><p class="note">Cada elección deja algo fuera. Nada de esto se guarda ni se envía.</p>`:`<p>Aún no has elegido ninguna lectura. Entra en una tensión y abre una de sus dos puertas.</p>`}</section>
+   <section class="block"><h3 style="color:var(--gold)"><span class="gem"></span>Seis preguntas para pensar hoy</h3><ol class="qs" id="qs">${qs}</ol>
+   <div class="pager" style="border:0;margin-top:16px;padding-top:0"><button class="btn solid" type="button" id="copy">Copiar las preguntas</button><span class="note" id="copyNote" style="margin:0"></span></div></section>
+   <div class="pager"><button class="btn" type="button" data-t="5">← ${esc(T[5].corto)}</button><button class="btn" type="button" data-go="obra">La obra completa →</button></div>`;
+}
+function obra(){
+  return `<p class="eyebrow">El texto resiste</p><h1 class="title">La obra, capítulo a capítulo</h1><p class="loc">Paráfrasis nuestras · citas breves con su página</p>${RULE}
+   ${DATA.obra.map(s=>`<details class="src" style="margin-top:0"><summary>${s.id.length<5?s.id+" · ":""}${esc(s.titulo)}</summary>${chapterBlock(s.id)}</details>`).join("")}
+   <p class="note">Texto de trabajo: PDF de 87 páginas, con ${DATA.erratas_probables} erratas probables de autocorrección (ninguna en las citas usadas). Paginación del PDF, no de una edición impresa. No reproducimos el texto íntegro: la obra sigue protegida en España hasta 2035.</p>`;
+}
+function render(){
+  document.body.classList.toggle("reading",S.view!=="portal");
+  const acc=S.view==="t"?T[S.n].acento:"#f2c879"; document.documentElement.style.setProperty("--accent",acc);
+  if(S.view!=="portal"){col.className="col unfold";col.innerHTML=S.view==="t"?tension(S.n):S.view==="minuto"?minuto():S.view==="centro"?centro():obra();
+    wire(); panel.scrollTop=0;}
+  drawDial();
+  Mech&&Mech.form(S.view==="t"?T[S.n].figura:S.view,acc);
+  Mech&&Mech.setCore(S.visited.size/6, S.view==="t"?S.n:-1);
+}
+function wire(){
+  col.querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>go("t",+b.dataset.t));
+  col.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>go(b.dataset.go));
+  col.querySelectorAll("[data-restore]").forEach(b=>b.onclick=restore);
+  col.querySelectorAll("[data-choice]").forEach(b=>b.onclick=()=>{S.choices.set(S.n,+b.dataset.choice);const top=panel.scrollTop;col.className="col";col.innerHTML=tension(S.n);wire();panel.scrollTop=top;drawDial();
+    Mech&&Mech.pulse(+b.dataset.choice);say("La lectura elegida ilumina una parte del mecanismo y deja otra en sombra.")});
+  const cp=col.querySelector("#copy"); if(cp)cp.onclick=()=>{const txt="Seis preguntas para pensar hoy · a partir de Ortega y Gasset, La rebelión de las masas\n\n"+T.map((t,i)=>`${NUM[i]}. ${t.herramienta}`).join("\n");
+    const note=$("#copyNote"),fb=()=>{const r=document.createRange();r.selectNodeContents($("#qs"));const s=getSelection();s.removeAllRanges();s.addRange(r);note.textContent="Ya están seleccionadas: cópialas con el teclado."};
+    try{navigator.clipboard.writeText(txt).then(()=>note.textContent="Copiadas.",fb)}catch(e){fb()}};
+}
+function go(view,n=null){S.view=view;S.n=n;render();try{history.replaceState(null,"",view==="portal"?location.pathname:"#"+(view==="t"?T[n].id:view))}catch(e){}
+  if(view!=="portal")panel.focus({preventScroll:true})}
+function restore(){S.u=0;$("#uni").value=0;Mech&&Mech.setUniform(0);if(S.view!=="portal"){const top=panel.scrollTop;col.className="col";col.innerHTML=S.view==="t"?tension(S.n):col.innerHTML;wire();panel.scrollTop=top}say("Los matices vuelven: colores, lecturas y objeciones.")}
+$("#home").onclick=()=>go("portal");
+document.querySelectorAll(".nav [data-go]").forEach(b=>b.onclick=()=>go(b.dataset.go));
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&S.view!=="portal")go("portal")});
+$("#uni").addEventListener("input",()=>{const before=band();S.u=+$("#uni").value/100;Mech&&Mech.setUniform(S.u);
+  if(band()!==before&&S.view==="t"){const top=panel.scrollTop;col.className="col";col.innerHTML=tension(S.n);wire();panel.scrollTop=top}
+  if(band()==="plano"&&before!=="plano")say("Uniformidad: un solo color, una sola voz. Ortega defendía lo contrario: convivir con quien es distinto.",6000)});
+
+/* ---------- Mecanismo ---------- */
+(function(){
+  let ok=false;try{const c=document.createElement("canvas");ok=!!(c.getContext("webgl")||c.getContext("experimental-webgl"))}catch(e){}
+  if(!ok||!window.THREE){$("#gl").hidden=true;$("#hint").innerHTML="<b>Tu navegador no muestra el mecanismo 3D.</b><br>Todo el contenido está en el dial inferior.";return}
+  const canvas=$("#gl"), bloomOK=!!(THREE.EffectComposer&&THREE.UnrealBloomPass&&THREE.GammaCorrectionShader);
+  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+  const DPR=Math.min(devicePixelRatio,innerWidth<900?1.5:1.75); renderer.setPixelRatio(DPR);
+  renderer.setClearColor(0x000000,0); renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.15;
+  if(!bloomOK)renderer.outputEncoding=THREE.sRGBEncoding;
+  const scene=new THREE.Scene(), camera=new THREE.PerspectiveCamera(30,1,.1,200);
+  // Entorno de estudio para que el metal tenga reflejos
+  const env=new THREE.Scene(); env.background=new THREE.Color("#020305");
+  const sb=(w,h,c,p)=>{const m=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({color:c,side:THREE.DoubleSide}));m.position.set(...p);m.lookAt(0,0,0);env.add(m)};
+  sb(6,4,new THREE.Color(2.6,1.7,.8),[-9,5,7]); sb(14,1,new THREE.Color(.5,.75,1.1),[0,10,3]); sb(4,1.4,new THREE.Color(1.2,.7,.3),[8,-5,6]); sb(3,7,new THREE.Color(.25,.35,.5),[10,2,-4]);
+  const pm=new THREE.PMREMGenerator(renderer); scene.environment=pm.fromScene(env,.03).texture; pm.dispose();
+  scene.add(new THREE.HemisphereLight("#9fb8d0","#1a120a",.15));
+  const key=new THREE.DirectionalLight("#ffd29a",.9); key.position.set(-6,6,9); scene.add(key);
+
+  const metal=new THREE.MeshStandardMaterial({color:"#120d08",metalness:1,roughness:.42,envMapIntensity:.55});
+  const metal2=new THREE.MeshStandardMaterial({color:"#0a0806",metalness:1,roughness:.55,envMapIntensity:.4});
+  const glow=(c,i=1)=>new THREE.MeshBasicMaterial({color:new THREE.Color(c).multiplyScalar(i),toneMapped:false});
+  const POLY=["#29c4ae","#ffb627","#3d8bff","#ff4a3d","#ff7a2f","#b25cff","#66d43a","#ff9a1f","#1fd6d0","#5ea4ff","#ff5a36","#c3d92a"];
+  const rig=new THREE.Group(); scene.add(rig);
+  const E=[]; // todos los elementos animables: {o, from, to, spin, kind, i}
+  const add=(o,kind,i)=>{rig.add(o);const e={o,kind,i,spin:0,spinT:0,dl:0};E.push(e);return e};
+
+  // Anillos: toro dorado luminoso + marcas de dial (instanciadas)
+  const tickGeo=new THREE.BoxGeometry(.012,.07,.02);
+  const rings=[...Array(7)].map((_,i)=>{const g=new THREE.Group(),sp=new THREE.Group();g.add(sp);
+    sp.add(new THREE.Mesh(new THREE.TorusGeometry(1,.009,8,200),glow("#f2c879",i%3===0?1.1:.65)));
+    const n=i%2?36:24, ticks=new THREE.InstancedMesh(tickGeo,glow("#f2c879",.5),n),d=new THREE.Object3D();
+    for(let k=0;k<n;k++){const a=k/n*Math.PI*2;d.position.set(Math.cos(a),Math.sin(a),0);d.rotation.set(0,0,a-Math.PI/2);d.scale.set(1,k%3?1:2,1);d.updateMatrix();ticks.setMatrixAt(k,d.matrix)}
+    sp.add(ticks); const e=add(g,"ring",i); e.sp=sp; return e});
+  // Rayos del sunburst
+  const rayGeo=new THREE.BoxGeometry(1,.018,.018); rayGeo.translate(.5,0,0);
+  const rays=[...Array(24)].map((_,i)=>add(new THREE.Mesh(rayGeo,glow(i%2?"#f2c879":"#ffe7b0",i%2?.6:.9)),"ray",i));
+  // Teselas del mosaico (pluralidad)
+  const tileGeo=new THREE.OctahedronGeometry(.16,0); tileGeo.scale(1,1.25,.45);
+  const tiles=[...Array(36)].map((_,i)=>{const m=new THREE.Mesh(tileGeo,new THREE.MeshBasicMaterial({color:new THREE.Color(POLY[i%12]).multiplyScalar(1.6),toneMapped:false}));const e=add(m,"tile",i);e.base=new THREE.Color(POLY[i%12]);return e});
+  // Marcos hexagonales escalonados
+  const hexPts=r=>[...Array(7)].map((_,k)=>{const a=Math.PI/2+k*Math.PI/3;return new THREE.Vector3(r*Math.cos(a),r*Math.sin(a),0)});
+  const frames=[...Array(4)].map((_,i)=>{const g=new THREE.Group();
+    const s=new THREE.Shape(hexPts(1).map(v=>new THREE.Vector2(v.x,v.y)));s.holes.push(new THREE.Path(hexPts(.94).map(v=>new THREE.Vector2(v.x,v.y))));
+    g.add(new THREE.Mesh(new THREE.ExtrudeGeometry(s,{depth:.08,bevelEnabled:false}),i%2?metal2:metal));
+    const ln=new THREE.Line(new THREE.BufferGeometry().setFromPoints(hexPts(1)),new THREE.LineBasicMaterial({color:new THREE.Color("#f2c879").multiplyScalar(i?0.55:1.1),toneMapped:false}));ln.position.z=.09;g.add(ln);
+    // chevrones en los vértices
+    for(let k=0;k<6;k++){const a=Math.PI/2+k*Math.PI/3,c=new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-.05,-.03,0),new THREE.Vector3(0,.02,0),new THREE.Vector3(.05,-.03,0)]),ln.material);
+      c.position.set(1.06*Math.cos(a),1.06*Math.sin(a),.09);c.rotation.z=a-Math.PI/2;c.scale.setScalar(1.4);g.add(c)}
+    return add(g,"frame",i)});
+  // Sectores: las seis tensiones (cuerpo de metal + contorno luminoso + rótulo)
+  const sectorShape=(r0,r1,a0,a1)=>{const s=new THREE.Shape();s.absarc(0,0,r1,a0,a1,false);s.absarc(0,0,r0,a1,a0,true);s.closePath();return s};
+  const step=Math.PI*2/6, pick=[], labelDraw=[];
+  const segs=T.map((t,i)=>{const g=new THREE.Group(),c=Math.PI/2-i*step,a0=c-step/2+.035,a1=c+step/2-.035;
+    const sh=sectorShape(3.2,4.25,a0,a1);
+    const body=new THREE.Mesh(new THREE.ExtrudeGeometry(sh,{depth:.22,bevelEnabled:true,bevelThickness:.03,bevelSize:.03,bevelSegments:2,curveSegments:32}),metal.clone());g.add(body);
+    const outlinePts=sh.getPoints(48).map(p=>new THREE.Vector3(p.x,p.y,.27)); outlinePts.push(outlinePts[0].clone());
+    const out=new THREE.Line(new THREE.BufferGeometry().setFromPoints(outlinePts),new THREE.LineBasicMaterial({color:new THREE.Color(t.acento).multiplyScalar(.9),toneMapped:false}));g.add(out);
+    // rótulo
+    const cv=document.createElement("canvas");cv.width=512;cv.height=200;const x=cv.getContext("2d"),tx=new THREE.CanvasTexture(cv);
+    const draw=()=>{x.clearRect(0,0,512,200);x.textAlign="center";x.textBaseline="middle";x.shadowColor=t.acento;x.shadowBlur=18;x.fillStyle="#fff1d0";
+      x.font="400 64px 'Poiret One','Josefin Sans',sans-serif";x.fillText(NUM[i],256,58);x.shadowBlur=10;x.font="600 46px 'Josefin Sans',sans-serif";x.fillText(t.corto.toUpperCase(),256,146,500);tx.needsUpdate=true};
+    draw(); labelDraw.push(draw);
+    const lab=new THREE.Mesh(new THREE.PlaneGeometry(1.9,.74),new THREE.MeshBasicMaterial({map:tx,transparent:true,depthWrite:false,toneMapped:false}));
+    lab.position.set(3.72*Math.cos(c),3.72*Math.sin(c),.3); g.add(lab);
+    body.userData={n:i}; pick.push(body);
+    const e=add(g,"seg",i); e.body=body; e.out=out; e.lab=lab; e.c=c; return e});
+  // Núcleo
+  const core=new THREE.Mesh(new THREE.SphereGeometry(.2,32,16),glow("#ffe2a6",2)); rig.add(core);
+  const coreHalo=new THREE.Mesh(new THREE.RingGeometry(.28,.31,64),glow("#ffe2a6",1.2)); rig.add(coreHalo);
+  const pl=new THREE.PointLight("#ffd28a",1.2,9); rig.add(pl);
+
+  /* ---- Formaciones: dónde va cada pieza en cada figura ---- */
+  const V=(x,y,z)=>new THREE.Vector3(x,y,z), Q=(x,y,z)=>new THREE.Euler(x,y,z);
+  const P=(pos,rot,scl)=>({p:pos,r:rot||Q(0,0,0),s:typeof scl==="number"?V(scl,scl,scl):(scl||V(1,1,1))});
+  const hidden=P(V(0,0,-.4),Q(0,0,0),.0001);
+  const golden=Math.PI*(3-Math.sqrt(5));
+  const F={
+    portal:{rig:Q(0,0,0),core:1,
+      ring:i=>P(V(0,0,.05),0,[1.25,1.8,2.45,3.05,4.38,4.9,5.45][i]),
+      ray:i=>{const a=i/24*Math.PI*2;return P(V(.32*Math.cos(a),.32*Math.sin(a),.08),Q(0,0,a),V(i%2?.6:.85,1,1))},
+      tile:i=>{const a=Math.PI/2-i/36*Math.PI*2;return P(V(2.75*Math.cos(a),2.75*Math.sin(a),.12),Q(0,0,a-Math.PI/2),1)},
+      frame:i=>P(V(0,0,-.35-i*.55),0,V(6.1+i*.62,6.1+i*.62,1)),
+      seg:i=>P(V(0,0,0),0,1),spin:i=>(i%2?1:-1)*.04},
+    armilar:{rig:Q(-.25,.35,0),core:1.6,
+      ring:i=>P(V(0,0,0),Q(i*.45,i*.7+.3,0),2.2+i*.42),
+      ray:i=>{const a=i/24*Math.PI*2;return P(V(0,0,0),Q(0,0,a),V(i%2?3.4:5.6,1,1))},
+      tile:i=>{const y=1-(i/35)*2,r=Math.sqrt(1-y*y),th=golden*i,R=5.6;return P(V(R*r*Math.cos(th),R*y,R*r*Math.sin(th)),Q(0,th,0),.9)},
+      frame:i=>P(V(0,0,-3-i),0,V(7.5+i,7.5+i,1)),seg:()=>hidden,spin:i=>.12+i*.02},
+    zigurat:{rig:Q(.62,-.35,0),core:1,
+      ring:i=>P(V(0,-2.8+i*.95,0),Q(Math.PI/2,0,0),5.2-i*.62),
+      ray:i=>{const a=i/24*Math.PI*2,r=5.2-(i%7)*.62;return P(V(r*Math.cos(a),-2.8+(i%7)*.95,r*Math.sin(a)),Q(0,0,Math.PI/2),V(.95,1,1))},
+      tile:i=>{const L=i%6,a=(i/36)*Math.PI*2*3,r=5.2-L*.62;return P(V(r*Math.cos(a),-2.8+L*.95+.12,r*Math.sin(a)),Q(0,-a,0),.8)},
+      frame:i=>P(V(0,-3.2-i*.12,0),Q(Math.PI/2,0,0),V(5.8+i*.5,5.8+i*.5,1)),seg:()=>hidden,spin:i=>(i%2?1:-1)*.05},
+    engranajes:{rig:Q(0,-.25,0),core:.6,
+      gears:[[-3.2,2.4,1.5],[-1.05,1.15,.95],[.95,1.9,1.1],[2.75,.35,1.25],[.65,-1.25,1.0],[-1.55,-.95,1.2],[-3.6,-1.1,.85]],
+      ring(i){const g=this.gears[i];return P(V(g[0],g[1],0),0,g[2])},
+      ray(i){const g=this.gears[Math.floor(i/4)],a=(i%4)*Math.PI/2+Math.floor(i/4);return P(V(g[0],g[1],.02),Q(0,0,a),V(g[2]*.92,1,1))},
+      tile:i=>{const c=i%6,r=Math.floor(i/6);return P(V(2.5+c*.36,-3.4+r*.36,.2),0,.85)},
+      frame:i=>i===0?P(V(3.4,-2.5,.1),0,V(1.55,1.55,1)):P(V(0,0,-2.5-i*.6),0,V(6.8+i*.5,6.8+i*.5,1)),seg:()=>hidden,
+      spin(i){const g=this.gears[i];return (i%2?1:-1)*.45/g[2]}},
+    tribunas:{rig:Q(0,0,0),core:.8,
+      ring:i=>i===6?P(V(0,0,-.6),0,5.8):P(V(i<3?-3.2:3.2,0,0),Q(0,i<3?.5:-.5,0),[1.0,1.6,2.2][i%3]),
+      ray:i=>P(V(-2.1,-1.65+i*.143,0),0,V(4.2,1,1)),
+      tile:i=>{const L=i<18,k=i%18,a=(L?Math.PI*.55:-Math.PI*.45)+(k/17)*Math.PI*.9;return P(V((L?-3.2:3.2)+2.75*Math.cos(a),2.75*Math.sin(a),.1),Q(0,0,a),.85)},
+      frame:i=>P(V(0,0,-1-i*.5),Q(0,0,Math.PI/2),V(6.4+i*.5,6.4+i*.5,1)),seg:()=>hidden,spin:i=>(i<3?1:-1)*.08},
+    atrio:{rig:Q(-.42,.2,0),core:1.2,
+      ring:i=>P(V(0,-3.9+i*1.3,0),Q(Math.PI/2,0,0),2.1),
+      ray:i=>{const a=i/24*Math.PI*2;return P(V(2.1*Math.cos(a),-3.9,2.1*Math.sin(a)),Q(0,0,Math.PI/2),V(7.8,1,1))},
+      tile:i=>{const a=i/36*Math.PI*2*2,y=-3.5+(i%9)*.85;return P(V(4.4*Math.cos(a),y,4.4*Math.sin(a)),Q(0,-a,0),.6)},
+      frame:i=>P(V(0,i%2?4.2:-4.3,0),Q(Math.PI/2,0,0),V(2.9+Math.floor(i/2)*1.2,2.9+Math.floor(i/2)*1.2,1)),seg:()=>hidden,spin:i=>.06},
+    mosaico:{rig:Q(0,0,0),core:.7,
+      ring:i=>P(V(0,0,-.15),0,[4.25,4.45,4.7,5.0,5.35,5.7,6.1][i]),
+      ray:i=>{const a=i/24*Math.PI*2;return P(V(0,0,-.5),Q(0,0,a),V(i%2?6.2:7.4,1,1))},
+      tile:i=>{const pts=hexGrid();const q=pts[i];return P(V(q[0],q[1],.2),0,2.1)},
+      frame:i=>P(V(0,0,-.3-i*.4),0,V(4.0+i*.32,4.0+i*.32,1)),seg:()=>hidden,spin:i=>(i%2?1:-1)*.02},
+    centro:{rig:Q(0,0,0),core:2.6,
+      ring:i=>P(V(0,0,.1),Q(i*.5,i*.9,0),.85+i*.16),
+      ray:i=>{const a=i/24*Math.PI*2;return P(V(0,0,0),Q(0,0,a),V(i%2?5.5:7.6,1,1))},
+      tile:i=>{const a=i/36*Math.PI*2;return P(V(3.4*Math.cos(a),3.4*Math.sin(a),0),Q(0,0,a-Math.PI/2),1.1)},
+      frame:i=>P(V(0,0,-.6-i*.6),0,V(5.2+i*.7,5.2+i*.7,1)),seg:()=>hidden,spin:i=>.5+i*.08},
+  };
+  F.minuto={...F.portal,rig:Q(.15,.55,0),core:1.2};
+  F.obra={...F.zigurat,rig:Q(.3,.7,0),core:.8};
+  let _hex=null; function hexGrid(){if(_hex)return _hex;const out=[];for(let q=-4;q<=4;q++)for(let r=-4;r<=4;r++){const x=.86*(q+r/2),y=.745*r;if(Math.hypot(x,y)<3.75)out.push([x,y,Math.hypot(x,y)])}
+    out.sort((a,b)=>a[2]-b[2]);_hex=out.slice(0,36);return _hex}
+
+  /* ---- Coreografía ---- */
+  let form="portal", fT=1, fStart=0, rigFrom=new THREE.Euler(), rigTo=new THREE.Euler(), coreT=1, coreNow=1, acc=new THREE.Color("#f2c879");
+  E.forEach(e=>{const f=F.portal[e.kind](e.i);e.from=f;e.to=f;e.dl=0;e.o.position.copy(f.p);e.o.rotation.copy(f.r);e.o.scale.copy(f.s);e.spinT=e.kind==="ring"?F.portal.spin(e.i):0});
+  const snap=e=>({p:e.o.position.clone(),r:e.o.rotation.clone(),s:e.o.scale.clone()});
+  const order={ring:0,frame:.12,seg:0,ray:.3,tile:.42};
+  function setForm(name,accent){if(!F[name])name="portal";const f=F[name];form=name;fStart=performance.now();rigFrom=rig.rotation.clone();rigTo=f.rig;coreT=f.core;acc.set(accent||"#f2c879");
+    E.forEach(e=>{e.from=snap(e);e.to=f[e.kind].call(f,e.i);e.dl=(order[e.kind]||0)+(e.kind==="tile"?e.i*.012:e.kind==="ray"?e.i*.01:e.i*.05);
+      e.spinT=e.kind==="ring"?f.spin.call(f,e.i):0});
+    // contornos y rayos toman el color de la tensión
+    rays.forEach((r,i)=>r.o.material.color.copy(acc).lerp(new THREE.Color("#fff1d0"),i%2?0:.45).multiplyScalar(i%2?.6:.9));
+    rings.forEach((r,i)=>r.sp.children[0].material.color.set(i%2?"#f2c879":acc.getStyle()).multiplyScalar(i%3===0?1.1:.65));
+  }
+  const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+  const DUR=1.45;
+  let pulseT=0;
+  Mech={form:(n,a)=>setForm(n,a),setCore:(f,n)=>{coreNow=f;segs.forEach(s=>s.sel=s.i===n)},setUniform:u=>{uni=u},pulse:()=>{pulseT=1}};
+  let uni=0;
+
+  // Encaje en pantalla: dónde se coloca la figura según la vista
+  let dist=24, layout={x:0,y:0,s:1};
+  function fit(){const w=innerWidth,h=innerHeight;camera.aspect=w/h;camera.updateProjectionMatrix();
+    const vh=2*dist*Math.tan(THREE.MathUtils.degToRad(15)), vw=vh*camera.aspect, R=6.3;
+    const reading=S.view!=="portal", mobile=w<900;
+    if(!reading){const availH=vh*(mobile?.56:.68), availW=vw*.92;layout={x:0,y:vh*(mobile?.06:.06),s:Math.min(availH,availW)/(2*R)}}
+    else if(mobile){const availH=vh*.27;layout={x:0,y:vh*.25,s:Math.min(availH,vw*.9)/(2*R)}}
+    else{const panelW=Math.min(44*16,w*.56)/w*vw, availW=vw-panelW;layout={x:-vw/2+availW/2+vw*.01,y:-vh*.02,s:Math.min(availW*.92,vh*.78)/(2*R)}}
+  }
+  let lay={x:0,y:0,s:1};
+  let composer=null,bloom=null;
+  function resize(){renderer.setSize(innerWidth,innerHeight,false);fit();
+    if(bloomOK){if(!composer){composer=new THREE.EffectComposer(renderer);composer.addPass(new THREE.RenderPass(scene,camera));
+        bloom=new THREE.UnrealBloomPass(new THREE.Vector2(innerWidth,innerHeight),.8,.5,.42);composer.addPass(bloom);composer.addPass(new THREE.ShaderPass(THREE.GammaCorrectionShader))}
+      composer.setPixelRatio(DPR);composer.setSize(innerWidth,innerHeight)}}
+  addEventListener("resize",resize); resize();
+
+  // Interacción
+  const ray=new THREE.Raycaster(), mv=new THREE.Vector2(), tip=$("#tip"); let hover=-1;
+  const hit=e=>{if(form!=="portal"&&form!=="minuto")return -1;mv.set(e.clientX/innerWidth*2-1,-(e.clientY/innerHeight)*2+1);ray.setFromCamera(mv,camera);const h=ray.intersectObjects(pick,false)[0];return h?h.object.userData.n:-1};
+  canvas.addEventListener("pointermove",e=>{hover=hit(e);canvas.style.cursor=hover>=0?"pointer":"default";
+    if(hover>=0&&e.pointerType==="mouse"){tip.hidden=false;tip.style.left=e.clientX+"px";tip.style.top=e.clientY+"px";tip.textContent=`${NUM[hover]} · ${T[hover].titulo}`}else tip.hidden=true});
+  canvas.addEventListener("pointerleave",()=>{hover=-1;tip.hidden=true});
+  let down=null;canvas.addEventListener("pointerdown",e=>down={x:e.clientX,y:e.clientY});
+  canvas.addEventListener("pointerup",e=>{if(!down||Math.hypot(e.clientX-down.x,e.clientY-down.y)>8)return;const n=hit(e);if(n>=0){tip.hidden=true;go("t",n)}});
+  let kb=0;canvas.addEventListener("keydown",e=>{if(e.key==="ArrowRight"||e.key==="ArrowLeft"){e.preventDefault();kb=(kb+(e.key==="ArrowRight"?1:5))%6;hover=kb;say(`${NUM[kb]} · ${T[kb].titulo}`,1800)}if(e.key==="Enter")go("t",kb)});
+  const par={x:0,y:0,tx:0,ty:0};addEventListener("pointermove",e=>{par.tx=e.clientX/innerWidth-.5;par.ty=e.clientY/innerHeight-.5});
+
+  const tmpC=new THREE.Color(), mono=new THREE.Color("#e9d7a8");
+  let last=performance.now(), run=true;
+  document.addEventListener("visibilitychange",()=>{run=!document.hidden;if(run){last=performance.now();requestAnimationFrame(loop)}});
+  function loop(now){if(!run)return;const dt=Math.min(.05,(now-last)/1000);last=now;const t=now/1000;
+    fit(); const k=reduce?1:Math.min(1,dt*3); lay.x+=(layout.x-lay.x)*k;lay.y+=(layout.y-lay.y)*k;lay.s+=(layout.s-lay.s)*k;
+    rig.position.set(lay.x,lay.y,0);
+    const el=(now-fStart)/1000;
+    const rk=reduce?1:ease(Math.min(1,el/1.6));
+    rig.rotation.set(rigFrom.x+(rigTo.x-rigFrom.x)*rk+(reduce?0:-par.ty*.12),rigFrom.y+(rigTo.y-rigFrom.y)*rk+(reduce?0:par.tx*.18),0);
+    rig.scale.setScalar(lay.s);
+    E.forEach(e=>{const p=reduce?1:ease(Math.max(0,Math.min(1,(el-e.dl)/DUR)));const o=e.o;
+      o.position.lerpVectors(e.from.p,e.to.p,p);o.scale.lerpVectors(e.from.s,e.to.s,p);
+      o.rotation.set(e.from.r.x+(e.to.r.x-e.from.r.x)*p,e.from.r.y+(e.to.r.y-e.from.r.y)*p,e.from.r.z+(e.to.r.z-e.from.r.z)*p);
+      if(e.sp){e.spin+=(e.spinT-e.spin)*Math.min(1,dt*2);if(!reduce)e.sp.rotation.z+=e.spin*dt}});
+    if(!reduce){rays.forEach((r,i)=>{if(form==="portal"||form==="centro"||form==="armilar"||form==="mosaico")r.o.rotation.z+=dt*(form==="centro"?.25:.05)})}
+    // teselas: pluralidad ↔ uniformidad
+    tiles.forEach(e=>{tmpC.copy(e.base).lerp(mono,uni);e.o.material.color.copy(tmpC).multiplyScalar(1.05+(reduce?0:Math.sin(t*1.6+e.i)*.15))});
+    // sectores
+    segs.forEach(s=>{const on=s.i===hover;s.body.material.color.set(on?"#5a4426":"#2a2116");s.out.material.color.set(T[s.i].acento).lerp(mono,uni).multiplyScalar(on?2.2:.95);s.lab.scale.setScalar(on?1.08:1);
+      if(!reduce&&form==="portal")s.o.position.z=on?.25:0});
+    // núcleo
+    pulseT=Math.max(0,pulseT-dt*1.5);
+    const cs=(F[form].core||1)*(1+coreNow*.6)+pulseT*.8+(reduce?0:Math.sin(t*2.2)*.05);
+    core.scale.setScalar(cs);coreHalo.scale.setScalar(cs*(1.3+(reduce?0:Math.sin(t*1.3)*.08)));pl.intensity=.6+cs*.6;
+    core.material.color.set("#ffe2a6").multiplyScalar(1.2+coreNow*1.0+pulseT*2);
+    if(bloom)bloom.strength=.78+pulseT*.6+(form==="centro"?.3:0);
+    camera.position.set(par.x*.0,0,dist);camera.lookAt(0,0,0);
+    composer?composer.render():renderer.render(scene,camera);
+    requestAnimationFrame(loop)}
+  requestAnimationFrame(loop);
+  document.fonts&&document.fonts.ready.then(()=>labelDraw.forEach(f=>f()));
+})();
+
+/* ---------- Arranque ---------- */
+(function(){const h=(location.hash||"").slice(1);const i=T.findIndex(t=>t.id===h);
+  if(i>=0)go("t",i);else if(["minuto","centro","obra"].includes(h))go(h);else render()})();
+</script>
