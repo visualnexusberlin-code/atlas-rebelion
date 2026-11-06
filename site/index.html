@@ -39,15 +39,18 @@ body.reading #bg{background-position:-22vw 0,-22vw 0,0 0}
   background:linear-gradient(var(--night) 30%,transparent)}
 .brand{display:flex;flex-direction:column;gap:3px;background:none;border:0;color:inherit;text-align:left;cursor:pointer;padding:0}
 .brand b{font-family:var(--deco);font-weight:400;font-size:clamp(1.05rem,1.9vw,1.45rem);letter-spacing:.24em;text-transform:uppercase;color:var(--gold);text-shadow:0 0 18px rgba(242,200,121,.45)}
-.brand span{font-family:var(--label);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.brand span{font-family:var(--label);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
 .nav{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
-.nav button{font-family:var(--label);font-weight:600;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);background:none;border:0;padding:8px 10px;cursor:pointer;border-bottom:1px solid transparent}
+.nav button{font-family:var(--label);font-weight:600;font-size:.72rem;min-height:40px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);background:none;border:0;padding:8px 10px;cursor:pointer;border-bottom:1px solid transparent}
 .nav button:hover{color:var(--paper)}
 .nav button[aria-current="page"]{color:var(--gold);border-bottom-color:var(--gold)}
 .uni{display:flex;align-items:center;gap:8px;margin-left:8px;padding-left:12px;border-left:1px solid var(--line)}
-.uni label{font-family:var(--label);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.uni label{font-family:var(--label);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 .uni input{width:96px;accent-color:var(--accent)}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+::selection{background:rgba(242,200,121,.32);color:#fff8e6}
+*{scrollbar-width:thin;scrollbar-color:rgba(242,200,121,.35) transparent}
+.dial svg{width:16px;height:16px;display:block}
 
 /* Portal */
 .hint{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:3;width:min(34rem,calc(100% - 32px));text-align:center;
@@ -59,9 +62,9 @@ body.reading .hint{opacity:0;pointer-events:none}
 .dial{position:fixed;left:0;right:0;bottom:0;z-index:5;display:flex;justify-content:center;gap:2px;flex-wrap:wrap;
   padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));padding-top:18px;padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px));
   background:linear-gradient(transparent,var(--night) 55%)}
-.dial button{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:92px;padding:8px 10px 6px;background:none;border:0;cursor:pointer;color:var(--muted);position:relative}
+.dial button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:92px;min-height:48px;padding:8px 10px 6px;background:none;border:0;cursor:pointer;color:var(--muted);position:relative}
 .dial button i{font-style:normal;font-family:var(--deco);font-size:1.25rem;color:var(--brass);line-height:1}
-.dial button span{font-family:var(--label);font-weight:600;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase}
+.dial button span{font-family:var(--label);font-weight:600;font-size:.7rem;white-space:nowrap;letter-spacing:.2em;text-transform:uppercase}
 .dial button::after{content:"";position:absolute;left:30%;right:30%;bottom:0;height:2px;background:var(--c-acc,var(--gold));opacity:0;transition:opacity .3s;box-shadow:0 0 10px var(--c-acc,var(--gold))}
 .dial button:hover{color:var(--paper)}
 .dial button[aria-current="true"]{color:var(--paper)}
@@ -77,16 +80,21 @@ body.reading .hint{opacity:0;pointer-events:none}
   background:linear-gradient(90deg,rgba(6,9,14,0) 0,rgba(6,9,14,.82) 9%,rgba(6,9,14,.94) 30%);
   opacity:0;pointer-events:none;transition:opacity .5s}
 body.reading .panel{opacity:1;pointer-events:auto}
+@media (min-width:900px){body.reading .dial{right:min(44rem,56vw);flex-wrap:nowrap;background:linear-gradient(transparent,var(--night) 70%)}
+  body.reading .dial button{min-width:0;padding:8px 6px 6px}
+  body.reading .dial .sep{margin:6px 2px}
+  body.reading .caption{left:calc((100% - min(44rem,56vw))/2);top:auto;bottom:calc(96px + env(safe-area-inset-bottom,0px))}}
 .panel:focus{outline:none}
 .col{max-width:38rem}
 .unfold>*{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
 .unfold>*:nth-child(2){animation-delay:.08s}.unfold>*:nth-child(3){animation-delay:.16s}.unfold>*:nth-child(4){animation-delay:.24s}
 .unfold>*:nth-child(5){animation-delay:.32s}.unfold>*:nth-child(6){animation-delay:.4s}.unfold>*:nth-child(n+7){animation-delay:.48s}
 @keyframes rise{from{opacity:0;transform:translateY(18px);clip-path:inset(0 0 100% 0)}to{opacity:1;transform:none;clip-path:inset(0 0 0 0)}}
-.eyebrow{font-family:var(--label);font-weight:600;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);margin:0}
-.title{font-family:var(--deco);font-weight:400;font-size:clamp(2.1rem,4.2vw,3.5rem);line-height:1.08;letter-spacing:.02em;margin:10px 0 6px;color:var(--paper);text-wrap:balance;
+.eyebrow{font-family:var(--label);font-weight:600;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);margin:0}
+.title{font-family:var(--deco);font-weight:400;font-size:clamp(2.1rem,4.2vw,3.5rem);line-height:1.08;letter-spacing:.02em;margin:0 0 10px;color:var(--paper);text-wrap:balance;
   text-shadow:0 0 28px color-mix(in srgb,var(--accent) 45%,transparent)}
-.loc{font-family:var(--label);font-size:.72rem;letter-spacing:.12em;color:var(--muted);font-variant-numeric:tabular-nums}
+.loc{font-family:var(--label);font-size:.74rem;letter-spacing:.12em;color:var(--muted);font-variant-numeric:tabular-nums}
+.meta{font-family:var(--label);font-weight:600;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:0}
 .rule{display:flex;align-items:center;gap:10px;margin:22px 0 18px;color:var(--accent)}
 .rule::before,.rule::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,currentColor,transparent);opacity:.6}
 .rule svg{width:34px;height:14px}
@@ -96,7 +104,7 @@ section.block{margin:0 0 30px}
 .ortega h3{color:var(--o)} .hoy h3{color:var(--a)} .contra h3{color:var(--c)}
 .big{font-family:var(--serif);font-size:clamp(1.3rem,2vw,1.6rem);line-height:1.38;margin:0 0 14px;text-wrap:pretty}
 .block p{font-size:1.06rem;line-height:1.65;margin:0 0 12px}
-blockquote{margin:14px 0;padding:2px 0 2px 18px;border-left:2px solid var(--o);font-style:italic;font-size:1.06rem;line-height:1.55;color:#f5ead2}
+blockquote{margin:14px 0;padding:2px 0 2px 18px;border-left:1px solid var(--o);font-style:italic;font-size:1.06rem;line-height:1.55;color:#f5ead2}
 blockquote cite{display:block;font-style:normal;font-family:var(--label);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:6px}
 .doors{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 10px}
 .door{position:relative;text-align:left;cursor:pointer;color:var(--paper);background:rgba(12,21,32,.7);border:1px solid var(--line);padding:22px 18px 18px;min-height:132px;
@@ -134,7 +142,7 @@ details.src summary{cursor:pointer;font-family:var(--label);font-weight:600;font
 .minute li{counter-increment:m;display:grid;grid-template-columns:2.2rem 1fr;gap:12px;font-size:1.12rem;line-height:1.55}
 .minute li::before{content:counter(m,upper-roman);font-family:var(--deco);font-size:1.3rem;color:var(--gold);text-shadow:0 0 10px rgba(242,200,121,.5)}
 .ledger{display:grid;gap:12px;margin:14px 0}
-.ledger div{padding:12px 14px;border-left:2px solid var(--a);background:rgba(12,21,32,.6)}
+.ledger div{padding:12px 14px;border:1px solid rgba(127,216,255,.25);background:rgba(12,21,32,.6)}
 .ledger b{font-family:var(--label);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--a);font-weight:600}
 .ledger p{margin:4px 0 0;font-size:.98rem;line-height:1.5}
 .qs{list-style:none;margin:0;padding:0;display:grid;gap:10px}
@@ -146,6 +154,11 @@ details.src summary{cursor:pointer;font-family:var(--label);font-weight:600;font
 .caption.show{opacity:1}
 .tip{position:fixed;z-index:6;pointer-events:none;font-family:var(--label);font-weight:600;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--paper);background:rgba(6,9,14,.9);border:1px solid var(--line);padding:6px 9px;transform:translate(14px,14px);white-space:nowrap}
 .short{display:none}
+.film{position:fixed;inset:0;z-index:20;background:var(--night);display:grid;place-items:center;opacity:0;transition:opacity .6s}
+.film.show{opacity:1}
+.film video{width:100%;height:100%;object-fit:contain;background:var(--night)}
+.film .skip{position:absolute;right:max(20px,env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));min-height:44px}
+.inline-film{display:block;width:100%;aspect-ratio:16/9;max-width:100%;border:1px solid var(--line);background:var(--night);margin:6px 0 16px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 @media (max-width:899px){
@@ -154,18 +167,21 @@ details.src summary{cursor:pointer;font-family:var(--label);font-weight:600;font
   .brand b{font-size:.95rem;letter-spacing:.18em}
   .nav{width:100%;justify-content:space-between;flex-wrap:nowrap}
   .nav nav{display:flex}
-  .long{display:none}.short{display:inline}
-  .nav button{padding:6px 7px;font-size:.6rem;letter-spacing:.14em}
+  .long{display:none}.short{display:inline;white-space:nowrap}
+  .home-tab{display:none}
+  .nav button{padding:6px 7px;font-size:.7rem;letter-spacing:.12em;min-height:44px}
   .uni{margin-left:0;padding-left:8px}
-  .uni label{display:none}.uni input{width:70px}
-  .panel{width:100%;top:38%;padding-top:28px;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px));
+  .uni label{font-size:.62rem;letter-spacing:.12em}.uni input{width:64px;height:44px}
+  .panel{width:100%;top:38%;bottom:calc(60px + env(safe-area-inset-bottom,0px));padding-top:28px;padding-bottom:28px;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px));
     background:linear-gradient(rgba(6,9,14,0) 0,rgba(6,9,14,.92) 26px,rgba(6,9,14,.97) 100%)}
   .title{font-size:2rem}
   .doors{grid-template-columns:1fr}
   .door{min-height:0}
-  .dial button{min-width:0;padding:6px 6px 5px}
-  .dial button span{display:none}
-  .dial button i{font-size:1.1rem}
+  .dial{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;background:var(--night);padding-top:4px;border-top:1px solid var(--line);scrollbar-width:none}
+  .dial button{min-width:64px;min-height:52px;padding:6px 8px 5px;flex:none}
+  .dial button span{font-size:.62rem;letter-spacing:.12em}
+  .dial button i{font-size:1.05rem}
+  .caption{top:calc(30% - 20px)}
   .hint{bottom:calc(70px + env(safe-area-inset-bottom,0px));font-size:.95rem}
   body.reading #bg{background-position:0 -18vh,0 -18vh,0 0}
 }
@@ -179,7 +195,7 @@ details.src summary{cursor:pointer;font-family:var(--label);font-weight:600;font
   <button class="brand" type="button" id="home"><b>La rebelión de las masas</b><span>José Ortega y Gasset · 1930 · Bóveda</span></button>
   <div class="nav">
     <nav aria-label="Secciones">
-      <button type="button" data-go="portal">Bóveda</button>
+      <button type="button" data-go="portal" class="home-tab">Bóveda</button>
       <button type="button" data-go="minuto"><span class="long">El libro en un minuto</span><span class="short">Un minuto</span></button>
       <button type="button" data-go="centro"><span class="long">El centro</span><span class="short">Centro</span></button>
       <button type="button" data-go="obra"><span class="long">La obra</span><span class="short">Obra</span></button>
@@ -195,6 +211,7 @@ details.src summary{cursor:pointer;font-family:var(--label);font-weight:600;font
 <article class="panel" id="panel" tabindex="-1" aria-live="polite"><div class="col" id="col"></div></article>
 
 <nav class="dial" id="dial" aria-label="Las seis tensiones"></nav>
+<div class="film" id="film" hidden role="dialog" aria-label="Animación"><video id="filmVideo" muted playsinline preload="auto"></video><button class="btn skip" type="button" id="filmSkip">Saltar</button></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
@@ -1158,7 +1175,7 @@ const RULE=`<div class="rule" aria-hidden="true"><svg viewBox="0 0 34 14"><path 
 /* ---------- Dial ---------- */
 function drawDial(){
   $("#dial").innerHTML=T.map((t,i)=>`<button type="button" data-t="${i}" style="--c-acc:${t.acento}" aria-current="${S.view==="t"&&S.n===i}" class="${S.choices.has(i)?"chosen":""}" aria-label="Tensión ${NUM[i]}: ${esc(t.titulo)}"><i>${NUM[i]}</i><span>${esc(t.corto)}</span></button>`).join("")
-   +`<span class="sep" aria-hidden="true"></span><button type="button" data-go="centro" aria-current="${S.view==="centro"}" aria-label="El centro"><i>◇</i><span>Centro</span></button>`;
+   +`<span class="sep" aria-hidden="true"></span><button type="button" data-go="centro" aria-current="${S.view==="centro"}" aria-label="El centro"><i><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 14.5 8 8 14.5 1.5 8Z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 5.5 10.5 8 8 10.5 5.5 8Z" fill="currentColor"/></svg></i><span>Centro</span></button>`;
   $("#dial").querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>go("t",+b.dataset.t));
   $("#dial").querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>go(b.dataset.go));
   document.querySelectorAll(".nav [data-go]").forEach(b=>b.setAttribute("aria-current",b.dataset.go===S.view?"page":"false"));
@@ -1166,7 +1183,7 @@ function drawDial(){
 
 /* ---------- Vistas ---------- */
 function upstream(id,acc=[],seen=new Set()){(DEPS[id]||[]).forEach(d=>{if(!seen.has(d)){seen.add(d);acc.push(d);upstream(d,acc,seen)}});return acc}
-function cite(c){return `<blockquote>${esc(c.texto)}<cite>${c.cap.length<5?"Cap. "+c.cap:esc(OBRA[c.cap].titulo)} · p. ${c.pdf} del PDF de trabajo</cite></blockquote>`}
+function cite(c){return `<blockquote>${esc(c.texto)}<cite>${c.cap.length<5?"Cap. "+c.cap:esc(OBRA[c.cap].titulo)} · pág. ${c.pdf}</cite></blockquote>`}
 function chapterBlock(id){const s=OBRA[id]; if(!s) return "";
   return `<div class="chap"><h4>${s.id.length<5?"Cap. "+s.id+" · ":""}${esc(s.titulo)}</h4><div class="loc">${esc(s.parte)} · pp. ${s.pdf[0]}–${s.pdf[1]}</div><p>${esc(s.tesis)}</p>${(s.citas||[]).map(c=>cite({...c,cap:s.id})).join("")}${s.apartados?`<ol>${s.apartados.map(a=>`<li>${esc(a.tesis)} <span class="loc">pp. ${a.pdf[0]}–${a.pdf[1]}</span></li>`).join("")}</ol>`:""}${s.nota_texto?`<p class="loc">${esc(s.nota_texto)}</p>`:""}</div>`}
 function notice(){if(band()==="claro")return "";
@@ -1174,8 +1191,8 @@ function notice(){if(band()==="claro")return "";
 function tension(i){
   const t=T[i], ch=S.choices.get(i), has=ch!==undefined, L=has?t.lecturas[ch]:null, flat=band()==="plano", comp=band()==="comprimido";
   S.visited.add(i);
-  let h=`<p class="eyebrow">Tensión ${NUM[i]} de VI · ${esc(t.cap_label)}</p><h1 class="title">${esc(flat?"Todos hacia el mismo lado":t.titulo)}</h1><p class="loc">${esc(t.fuente)}</p>${RULE}${notice()}`;
-  h+=`<section class="block ortega"><h3><span class="gem"></span>Lo que vio Ortega</h3><p class="big">${esc(t.ortega_idea)}</p>${comp||flat?"":`<p>${esc(t.ortega_largo)}</p>`}${t.citas.map(cite).join("")}</section>`;
+  let h=`<h1 class="title">${esc(flat?"Todos hacia el mismo lado":t.titulo)}</h1><p class="meta">Tensión ${NUM[i]} de VI · ${esc(t.cap_label)}</p>${RULE}${notice()}`;
+  h+=`<section class="block ortega"><h3><span class="gem"></span>Lo que vio Ortega</h3><p class="big">${esc(t.ortega_idea)}</p>${comp||flat?"":`<p>${esc(t.ortega_tesis)}</p>`}${t.citas.map(cite).join("")}</section>`;
   h+=`<section class="block hoy"><h3><span class="gem"></span>La tensión hoy</h3><p class="big">${esc(flat?t.aplanado:t.pregunta)}</p>
     <div class="doors">${t.lecturas.map((l,k)=>`<button type="button" class="door" data-choice="${k}" aria-pressed="${ch===k}" ${flat?"disabled":""}><i>${k?"II":"I"}</i><b>${esc(flat?"Una solución eficaz para todos":comp?l.corto:l.etiqueta)}</b></button>`).join("")}</div>`;
   if(!has&&!flat)h+=`<p class="choose-hint">Elige una puerta para leer qué ilumina y qué deja fuera. Puedes cambiar cuando quieras.</p>`;
@@ -1191,10 +1208,11 @@ function tension(i){
   return h;
 }
 function minuto(){
-  return `<p class="eyebrow">Antes de entrar</p><h1 class="title">El libro en un minuto</h1><p class="loc">Madrid, 1926–1930 · prólogos y epílogo de 1937–1938</p>${RULE}
+  return `<h1 class="title">El libro en un minuto</h1><p class="meta">Madrid, 1926–1930 · prólogos y epílogo de 1937–1938</p>${RULE}
    <ol class="minute">${DATA.libro_minuto.map(l=>`<li>${esc(l)}</li>`).join("")}</ol>
    <section class="block contra" style="margin-top:28px"><h3><span class="gem"></span>Leerlo con ojos de hoy</h3><p>${esc(DATA.lectura_critica)}</p></section>
    <section class="block"><h3 style="color:var(--gold)"><span class="gem"></span>Cómo funciona la bóveda</h3>
+   <video class="inline-film" src="media/seisfiguras.mp4" poster="media/seisfiguras.jpg" muted playsinline loop ${reduce?"controls":"autoplay"} aria-label="Animación: el mismo mecanismo se reorganiza en las seis figuras de las tensiones"></video>
    <p>El anillo de la bóveda tiene <b>seis sectores, uno por cada tensión</b> que el libro deja abierta. Al entrar en uno, el mecanismo se reorganiza en una figura propia y aparece el texto: primero lo que vio Ortega, después la tensión de hoy, con dos lecturas posibles.</p>
    <p>El control <b>Uniformar</b> es un experimento: quita las diferencias a los colores y también al texto. Es la amenaza que Ortega veía en una sociedad donde todos opinan igual sin dar razones.</p>
    <p>En <b>el centro</b> se reúne lo que has elegido y las seis preguntas para pensar fuera de aquí.</p></section>
@@ -1203,7 +1221,7 @@ function minuto(){
 function centro(){
   const qs=T.map((t,i)=>`<li><i>${NUM[i]}</i><span>${esc(t.herramienta)}</span></li>`).join("");
   const led=[...S.choices].sort((a,b)=>a[0]-b[0]).map(([i,k])=>`<div><b>${esc(T[i].corto)} · elegiste «${esc(T[i].lecturas[k].corto)}»</b><p>${esc(T[i].lecturas[k].deja_fuera)}</p></div>`).join("");
-  return `<p class="eyebrow">El centro de la bóveda</p><h1 class="title">Lo que usas no se sostiene solo.</h1><p class="loc">Formulación nuestra a partir de los capítulos IX y XV</p>${RULE}
+  return `<h1 class="title">Lo que usas no se sostiene solo.</h1><p class="meta">El centro · formulación nuestra a partir de los cap. IX y XV</p>${RULE}
    <p class="big">En el centro no hay un tesoro ni un veredicto. Hay una pregunta: ¿qué decides sostener, sin impedir que otros puedan cambiarlo?</p>
    <section class="block hoy"><h3><span class="gem"></span>Tu recorrido</h3>${led?`<div class="ledger">${led}</div><p class="note">Cada elección deja algo fuera. Nada de esto se guarda ni se envía.</p>`:`<p>Aún no has elegido ninguna lectura. Entra en una tensión y abre una de sus dos puertas.</p>`}</section>
    <section class="block"><h3 style="color:var(--gold)"><span class="gem"></span>Seis preguntas para pensar hoy</h3><ol class="qs" id="qs">${qs}</ol>
@@ -1211,30 +1229,31 @@ function centro(){
    <div class="pager"><button class="btn" type="button" data-t="5">← ${esc(T[5].corto)}</button><button class="btn" type="button" data-go="obra">La obra completa →</button></div>`;
 }
 function obra(){
-  return `<p class="eyebrow">El texto resiste</p><h1 class="title">La obra, capítulo a capítulo</h1><p class="loc">Paráfrasis nuestras · citas breves con su página</p>${RULE}
+  return `<h1 class="title">La obra, capítulo a capítulo</h1><p class="meta">Paráfrasis nuestras · citas breves con su página</p>${RULE}
    ${DATA.obra.map(s=>`<details class="src" style="margin-top:0"><summary>${s.id.length<5?s.id+" · ":""}${esc(s.titulo)}</summary>${chapterBlock(s.id)}</details>`).join("")}
-   <p class="note">Texto de trabajo: PDF de 87 páginas, con ${DATA.erratas_probables} erratas probables de autocorrección (ninguna en las citas usadas). Paginación del PDF, no de una edición impresa. No reproducimos el texto íntegro: la obra sigue protegida en España hasta 2035.</p>`;
+   <p class="note">Las páginas citadas remiten a la edición de trabajo: un PDF de 87 páginas, con ${DATA.erratas_probables} erratas probables de autocorrección (ninguna en las citas usadas). Paginación del PDF, no de una edición impresa. No reproducimos el texto íntegro: la obra sigue protegida en España hasta 2035.</p>`;
 }
 function render(){
-  document.body.classList.toggle("reading",S.view!=="portal");
+  document.body.classList.toggle("reading",S.view!=="portal"); panel.inert=S.view==="portal";
   const acc=S.view==="t"?T[S.n].acento:"#f2c879"; document.documentElement.style.setProperty("--accent",acc);
   if(S.view!=="portal"){col.className="col unfold";col.innerHTML=S.view==="t"?tension(S.n):S.view==="minuto"?minuto():S.view==="centro"?centro():obra();
     wire(); panel.scrollTop=0;}
   drawDial();
   Mech&&Mech.form(S.view==="t"?T[S.n].figura:S.view,acc);
   Mech&&Mech.setCore(S.visited.size/6, S.view==="t"?S.n:-1);
+  Mech&&Mech.setSide(S.view==="t"&&S.choices.has(S.n)?(S.choices.get(S.n)?1:-1):0);
 }
 function wire(){
   col.querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>go("t",+b.dataset.t));
   col.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>go(b.dataset.go));
   col.querySelectorAll("[data-restore]").forEach(b=>b.onclick=restore);
   col.querySelectorAll("[data-choice]").forEach(b=>b.onclick=()=>{S.choices.set(S.n,+b.dataset.choice);const top=panel.scrollTop;col.className="col";col.innerHTML=tension(S.n);wire();panel.scrollTop=top;drawDial();
-    Mech&&Mech.pulse(+b.dataset.choice);say("La lectura elegida ilumina una parte del mecanismo y deja otra en sombra.")});
+    Mech&&Mech.pulse(+b.dataset.choice);Mech&&Mech.setSide(+b.dataset.choice?1:-1);say("La lectura elegida ilumina una parte del mecanismo y deja otra en sombra.")});
   const cp=col.querySelector("#copy"); if(cp)cp.onclick=()=>{const txt="Seis preguntas para pensar hoy · a partir de Ortega y Gasset, La rebelión de las masas\n\n"+T.map((t,i)=>`${NUM[i]}. ${t.herramienta}`).join("\n");
     const note=$("#copyNote"),fb=()=>{const r=document.createRange();r.selectNodeContents($("#qs"));const s=getSelection();s.removeAllRanges();s.addRange(r);note.textContent="Ya están seleccionadas: cópialas con el teclado."};
     try{navigator.clipboard.writeText(txt).then(()=>note.textContent="Copiadas.",fb)}catch(e){fb()}};
 }
-function go(view,n=null){S.view=view;S.n=n;render();try{history.replaceState(null,"",view==="portal"?location.pathname:"#"+(view==="t"?T[n].id:view))}catch(e){}
+function go(view,n=null){S.view=view;S.n=n;render();if(view==="centro")playFilm("centro");try{history.replaceState(null,"",view==="portal"?location.pathname:"#"+(view==="t"?T[n].id:view))}catch(e){}
   if(view!=="portal")panel.focus({preventScroll:true})}
 function restore(){S.u=0;$("#uni").value=0;Mech&&Mech.setUniform(0);if(S.view!=="portal"){const top=panel.scrollTop;col.className="col";col.innerHTML=S.view==="t"?tension(S.n):col.innerHTML;wire();panel.scrollTop=top}say("Los matices vuelven: colores, lecturas y objeciones.")}
 $("#home").onclick=()=>go("portal");
@@ -1242,6 +1261,7 @@ document.querySelectorAll(".nav [data-go]").forEach(b=>b.onclick=()=>go(b.datase
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&S.view!=="portal")go("portal")});
 $("#uni").addEventListener("input",()=>{const before=band();S.u=+$("#uni").value/100;Mech&&Mech.setUniform(S.u);
   if(band()!==before&&S.view==="t"){const top=panel.scrollTop;col.className="col";col.innerHTML=tension(S.n);wire();panel.scrollTop=top}
+  if(band()==="plano"&&before!=="plano")playFilm("uniformar");
   if(band()==="plano"&&before!=="plano")say("Uniformidad: un solo color, una sola voz. Ortega defendía lo contrario: convivir con quien es distinto.",6000)});
 
 /* ---------- Mecanismo ---------- */
@@ -1323,7 +1343,7 @@ $("#uni").addEventListener("input",()=>{const before=band();S.u=+$("#uni").value
   const F={
     portal:{rig:Q(0,0,0),core:1,
       ring:i=>P(V(0,0,.05),0,[1.25,1.8,2.45,3.05,4.38,4.9,5.45][i]),
-      ray:i=>{const a=i/24*Math.PI*2;return P(V(.32*Math.cos(a),.32*Math.sin(a),.08),Q(0,0,a),V(i%2?.6:.85,1,1))},
+      ray:i=>{const a=i/24*Math.PI*2;return i%2?P(V(.32*Math.cos(a),.32*Math.sin(a),.08),Q(0,0,a),V(.6,1,1)):P(V(0,0,-.9),Q(0,0,a),V(8.4,1,1))},
       tile:i=>{const a=Math.PI/2-i/36*Math.PI*2;return P(V(2.75*Math.cos(a),2.75*Math.sin(a),.12),Q(0,0,a-Math.PI/2),1)},
       frame:i=>P(V(0,0,-.35-i*.55),0,V(6.1+i*.62,6.1+i*.62,1)),
       seg:i=>P(V(0,0,0),0,1),spin:i=>(i%2?1:-1)*.04},
@@ -1381,11 +1401,13 @@ $("#uni").addEventListener("input",()=>{const before=band();S.u=+$("#uni").value
     // contornos y rayos toman el color de la tensión
     rays.forEach((r,i)=>r.o.material.color.copy(acc).lerp(new THREE.Color("#fff1d0"),i%2?0:.45).multiplyScalar(i%2?.6:.9));
     rings.forEach((r,i)=>r.sp.children[0].material.color.set(i%2?"#f2c879":acc.getStyle()).multiplyScalar(i%3===0?1.1:.65));
+    rings.forEach(r=>r.c0=r.sp.children[0].material.color.clone()); rays.forEach(r=>r.c0=r.o.material.color.clone());
   }
   const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
   const DUR=1.45;
   let pulseT=0;
-  Mech={form:(n,a)=>setForm(n,a),setCore:(f,n)=>{coreNow=f;segs.forEach(s=>s.sel=s.i===n)},setUniform:u=>{uni=u},pulse:()=>{pulseT=1}};
+  let side=0; E.forEach(e=>e.em=1);
+  Mech={setSide:s=>{side=s},form:(n,a)=>setForm(n,a),setCore:(f,n)=>{coreNow=f;segs.forEach(s=>s.sel=s.i===n)},setUniform:u=>{uni=u},pulse:()=>{pulseT=1}};
   let uni=0;
 
   // Encaje en pantalla: dónde se coloca la figura según la vista
@@ -1401,7 +1423,7 @@ $("#uni").addEventListener("input",()=>{const before=band();S.u=+$("#uni").value
   let composer=null,bloom=null;
   function resize(){renderer.setSize(innerWidth,innerHeight,false);fit();
     if(bloomOK){if(!composer){composer=new THREE.EffectComposer(renderer);composer.addPass(new THREE.RenderPass(scene,camera));
-        bloom=new THREE.UnrealBloomPass(new THREE.Vector2(innerWidth,innerHeight),.8,.5,.42);composer.addPass(bloom);composer.addPass(new THREE.ShaderPass(THREE.GammaCorrectionShader))}
+        bloom=new THREE.UnrealBloomPass(new THREE.Vector2(innerWidth,innerHeight),.72,.45,.55);composer.addPass(bloom);composer.addPass(new THREE.ShaderPass(THREE.GammaCorrectionShader))}
       composer.setPixelRatio(DPR);composer.setSize(innerWidth,innerHeight)}}
   addEventListener("resize",resize); resize();
 
@@ -1432,7 +1454,9 @@ $("#uni").addEventListener("input",()=>{const before=band();S.u=+$("#uni").value
       if(e.sp){e.spin+=(e.spinT-e.spin)*Math.min(1,dt*2);if(!reduce)e.sp.rotation.z+=e.spin*dt}});
     if(!reduce){rays.forEach((r,i)=>{if(form==="portal"||form==="centro"||form==="armilar"||form==="mosaico")r.o.rotation.z+=dt*(form==="centro"?.25:.05)})}
     // teselas: pluralidad ↔ uniformidad
-    tiles.forEach(e=>{tmpC.copy(e.base).lerp(mono,uni);e.o.material.color.copy(tmpC).multiplyScalar(1.05+(reduce?0:Math.sin(t*1.6+e.i)*.15))});
+    E.forEach(e=>{const x=e.o.position.x,tg=side===0||Math.abs(x)<.35?1:(x*side>0?1.45:.22);e.em+=(tg-e.em)*(reduce?1:Math.min(1,dt*3))});
+    rings.forEach(r=>r.c0&&r.sp.children[0].material.color.copy(r.c0).multiplyScalar(r.em)); rays.forEach(r=>r.c0&&r.o.material.color.copy(r.c0).multiplyScalar(r.em));
+    tiles.forEach(e=>{tmpC.copy(e.base).lerp(mono,uni);e.o.material.color.copy(tmpC).multiplyScalar((1.05+(reduce?0:Math.sin(t*1.6+e.i)*.15))*e.em)});
     // sectores
     segs.forEach(s=>{const on=s.i===hover;s.body.material.color.set(on?"#5a4426":"#2a2116");s.out.material.color.set(T[s.i].acento).lerp(mono,uni).multiplyScalar(on?2.2:.95);s.lab.scale.setScalar(on?1.08:1);
       if(!reduce&&form==="portal")s.o.position.z=on?.25:0});
@@ -1441,7 +1465,7 @@ $("#uni").addEventListener("input",()=>{const before=band();S.u=+$("#uni").value
     const cs=(F[form].core||1)*(1+coreNow*.6)+pulseT*.8+(reduce?0:Math.sin(t*2.2)*.05);
     core.scale.setScalar(cs);coreHalo.scale.setScalar(cs*(1.3+(reduce?0:Math.sin(t*1.3)*.08)));pl.intensity=.6+cs*.6;
     core.material.color.set("#ffe2a6").multiplyScalar(1.2+coreNow*1.0+pulseT*2);
-    if(bloom)bloom.strength=.78+pulseT*.6+(form==="centro"?.3:0);
+    if(bloom)bloom.strength=.7+pulseT*.6+(form==="centro"?.3:0);
     camera.position.set(par.x*.0,0,dist);camera.lookAt(0,0,0);
     composer?composer.render():renderer.render(scene,camera);
     requestAnimationFrame(loop)}
@@ -1449,7 +1473,21 @@ $("#uni").addEventListener("input",()=>{const before=band();S.u=+$("#uni").value
   document.fonts&&document.fonts.ready.then(()=>labelDraw.forEach(f=>f()));
 })();
 
+/* ---------- Momentos clave en vídeo (Remotion) ---------- */
+const FILMS={prologo:"media/prologo.mp4",uniformar:"media/uniformar.mp4",centro:"media/centro.mp4"}, shownFilms=new Set();
+function playFilm(k){
+  let seen=shownFilms.has(k); try{seen=seen||sessionStorage.getItem("boveda-film-"+k)==="1"}catch(e){}
+  if(reduce||seen)return; shownFilms.add(k); try{sessionStorage.setItem("boveda-film-"+k,"1")}catch(e){}
+  const f=$("#film"),v=$("#filmVideo"),back=document.activeElement; let done=false;
+  const end=()=>{if(done)return;done=true;f.classList.remove("show");document.removeEventListener("keydown",key,true);
+    setTimeout(()=>{f.hidden=true;v.pause();v.removeAttribute("src");v.load()},600);if(back&&back.focus)back.focus({preventScroll:true})};
+  const key=e=>{if(e.key==="Escape"){e.stopPropagation();end()}};
+  v.src=FILMS[k];v.poster="media/"+k+".jpg";f.hidden=false;requestAnimationFrame(()=>f.classList.add("show"));
+  v.onended=end;v.onerror=end;$("#filmSkip").onclick=end;document.addEventListener("keydown",key,true);
+  const pr=v.play();if(pr&&pr.catch)pr.catch(end);$("#filmSkip").focus({preventScroll:true});
+}
+
 /* ---------- Arranque ---------- */
 (function(){const h=(location.hash||"").slice(1);const i=T.findIndex(t=>t.id===h);
-  if(i>=0)go("t",i);else if(["minuto","centro","obra"].includes(h))go(h);else render()})();
+  if(i>=0)go("t",i);else if(["minuto","centro","obra"].includes(h))go(h);else{render();playFilm("prologo")}})();
 </script>
