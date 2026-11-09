@@ -29,3 +29,12 @@ npx remotion render Prologo ../site/media/prologo.mp4 --codec=h264 --crf=26
 - Nadie es clasificado: las elecciones no se puntúan ni se envían.
 
 Remotion es gratuito para equipos de hasta 3 personas; para uso comercial en organizaciones mayores, revisar su licencia.
+
+## v5 · 2026-11-09 — pasada Art Déco
+
+- **Portal como fachada**: shader de fondo (`deco` en `site/template.html`) con sunburst escalonado, pilastras estriadas y corona de arcos; sigue a la bóveda sin girar con ella.
+- **Sectores**: esmalte por tensión, incrustación en abanico y rótulos como botones DOM (`#seclabels`, ≥ 12 px).
+- **Lectura**: marcos en zigurat (`--zig-top`, `--zig-base`, `--zig-all`), puertas con marquetería en abanico, botones en chevrón, numerales en Limelight.
+- **Sin servicios externos**: tipografías en `site/fonts/` (SIL OFL) y Three.js r128 en `site/vendor/` (MIT). Para publicar hay que subir `index.html` junto con `fonts/`, `vendor/` y `media/`.
+- **Pruebas**: `window.__b` expone `form()`, `info()` y `labels()` para medir en escena.
+- Formas del shader adaptadas de las funciones de distancia de Inigo Quilez y de gokayfem/shader-skills (MIT).
